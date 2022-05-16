@@ -1,0 +1,160 @@
+@import "function";
+@import "variables";
+
+.navbar {
+    box-shadow: $boxShadowNav;
+    width: 100%
+}
+.contenedor-botones-nav {
+    @include flex (flex,column,end,none, none, none);
+}
+
+.nav-ul {
+    @include listas (none, 10px)
+}
+
+.botones-nav {
+    @include contenedor (#fff,#2A7FDF,20px, 215px, 5px);
+}
+
+
+@media screen and (max-width: 784px) {
+    .contenedor-botones-nav {
+        display: none;
+    }
+    .img-fluid {
+        width: 200px;
+    }
+}
+
+
+.contenedor-warning {
+    @include flex (flex, row, none, none, none, none);
+    @include contenedor (#000, #fff, 0px, 500px, auto);
+    margin-top: 100px;
+    box-shadow: $boxShadowWarning;
+    height: 200px;
+}
+
+.warning-texto {
+    justify-content: end;
+    @include texto ( 20px,left, #000 , 0px, auto, none);
+}
+
+.warning-icono {
+    @include flex (flex, row, none, none, none,0px);
+    @include icono (50px, #2A7FDF, 20px);
+}
+
+.link-consejos {
+    @include texto (none, none, #2A7FDF, none, none, none);
+}
+
+@media screen and (max-width:784px) {
+    .contenedor-warning {
+        @include contenedor (#000, #fff, 0px, 100%, auto);
+        margin-top: 50px
+    }
+
+    .warning-texto {
+        justify-content: end;
+        @include texto ( 17px,left, #000 , 0px, auto, none);
+    }
+}
+
+
+
+
+.contenedor-form {
+    @include flex (flex, column, center, none, 500px, auto)
+}
+
+.form-select {
+    @include flex (flex, row, center, none, 500px, auto);
+    @include contenedor (none, #C4C4C4 , none, none, none);
+    margin-top: 50px;
+}
+
+.form-floating input{
+    @include contenedor (none, #C4C4C4 , none, none, none);
+}
+
+.contenedor-check-keyboard{
+    @include flex (flex, column, center, none, 500px, auto);
+    padding: 10px
+}
+
+.form-check {
+    @include flex (flex, row, center, none, 500px, auto);
+}
+
+.form-keyboard {
+    @include flex (flex, row, center, none, 500px, auto);
+}
+
+.form-keyboard i {
+    @include texto (15px ,center,#000, 0px, 5px, none)
+}
+
+.contenedor-botones-form {
+    @include flex (flex,row,center,none, none, 30px);
+}
+.contenedor-botones-form button {
+    @include contenedor (#2A7FDF, #C4C4C4,none, none, 0px 110px );
+}
+
+.contenedor-recuperar-clave{
+    @include flex (flex,row,center,none, none, 0);
+}
+
+.contenedor-recuperar-clave a {
+    @include texto (20px, center , #2A7FDF, 0, 0, none);
+}
+
+
+
+@media screen and (max-width:784px) {
+    .contenedor-form {
+        @include flex (flex, column, center, none, 100%, auto);
+       
+    }
+
+    .contenedor-select {
+        margin: auto;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .form-select {
+        @include flex (flex, row, center, none, 100%, auto);
+        @include contenedor (none, #C4C4C4 , none, none, none);
+        margin-top: 50px;
+        padding: 10px;
+    }
+
+    .contenedor-check-keyboard{
+        @include flex (flex, column, center, none, 100%, auto);
+        padding: 10px
+    }
+
+    .form-check {
+        @include flex (flex, row, center, none, 100%, auto);
+    }
+    
+    .form-keyboard {
+        @include flex (flex, row, center, none, 100%, auto);
+    }
+
+    .contenedor-botones-form {
+        @include flex (flex,column,center,none, none, 0px);
+        padding: 10px
+    }
+
+    .contenedor-botones-form button {
+        @include contenedor (#2A7FDF, #C4C4C4,none, none, 10px 0px );
+    }
+
+    .contenedor-recuperar-clave a {
+        @include texto (15px, center , #2A7FDF, 0, 0, none);
+    }
+}

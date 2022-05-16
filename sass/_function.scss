@@ -1,0 +1,43 @@
+@mixin flex ($display,$flexDirection, $justifyContentEnd, $alingItems, $width, $margin) {
+    display: $display;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContentEnd;
+    align-items: $alingItems;
+    width: $width;
+    margin: $margin;
+}
+
+
+@mixin contenedor ( $color, $background, $borderRadius, $width, $margin) {
+    color: $color;
+    background-color: $background;
+    border-radius: $borderRadius;
+    width: $width;
+    margin: $margin;
+}
+
+@mixin listas ($style, $padding) {
+    list-style: $style;
+    padding: $padding;
+}
+
+
+@mixin texto ( $fontSize,$textAling, $Color, $Padding, $margin, $textDecoration) {
+    font-size: $fontSize;
+    text-align: $textAling;
+    color:$Color ;
+    padding: $Padding;
+    margin: $margin;
+    text-decoration: $textDecoration;
+    
+}
+
+@mixin icono ($fontSIze, $Color, $margin) {
+    font-size:$fontSIze ;
+    color: $Color;
+    margin: $margin;
+}
+
+
+
+
