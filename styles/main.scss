@@ -1,6 +1,8 @@
 @import "function";
 @import "variables";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 .navbar {
     box-shadow: $boxShadowNav;
     width: 100%
@@ -63,8 +65,6 @@
 }
 
 
-
-
 .contenedor-form {
     @include flex (flex, column, center, none, 500px, auto)
 }
@@ -81,7 +81,7 @@
 
 .contenedor-check-keyboard{
     @include flex (flex, column, center, none, 500px, auto);
-    padding: 10px
+    padding: 10px;
 }
 
 .form-check {
@@ -90,33 +90,29 @@
 
 .form-keyboard {
     @include flex (flex, row, center, none, 500px, auto);
-}
-
-.form-keyboard i {
-    @include texto (15px ,center,#000, 0px, 5px, none)
+    i{
+        @include texto (15px ,center,#000, 0px, 5px, none);
+    }
 }
 
 .contenedor-botones-form {
     @include flex (flex,row,center,none, none, 30px);
-}
-.contenedor-botones-form button {
-    @include contenedor (#2A7FDF, #C4C4C4,none, none, 0px 110px );
+    button{
+        @include contenedor (#2A7FDF, #C4C4C4,none, none, 0px 110px );
+    }
 }
 
 .contenedor-recuperar-clave{
     @include flex (flex,row,center,none, none, 0);
+    a{
+        @include texto (20px, center , #2A7FDF, 0, 0, none);
+    }
 }
-
-.contenedor-recuperar-clave a {
-    @include texto (20px, center , #2A7FDF, 0, 0, none);
-}
-
 
 
 @media screen and (max-width:784px) {
     .contenedor-form {
-        @include flex (flex, column, center, none, 100%, auto);
-       
+        @include flex (flex, column, center, none, 100%, auto); 
     }
 
     .contenedor-select {
