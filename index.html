@@ -7,16 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
     <title>ITBANK</title>
 </head>
 
 <body>
+    <!--ENCABEZADO: contiene la barra de navegación con enlace directo al Home Banking-->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand pt-0" href="#">
-                    <img src="img/logoitbankoficial.svg" alt="" width="100px">
+                    <div class="imagen-nav">
+                        <img src="img/logoitbankoficial.svg">
+                    </div>
                 </a>
                 <div class="d-flex">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -26,7 +29,7 @@
                             <a class="nav-link" aria-current="page" href="pages/ayuda.html">Ayuda</a>
                         </div>
                     </div>
-                    <button class="btn btn-outline-primary me-2">Home Banking</button>
+                    <button class="btn boton-hb btn-outline-primary me-2">Home Banking</button>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +40,7 @@
         </nav>
     </header>
 
+    <!--CONTENIDO PRINCIPAL: contiene un carrusel de imagenes con links a los sitios correspondientes, un texto intermedio y al final una serie de tarjetas-->
     <main class="contenido-principal">
         <div id="carouselExampleCaptions" class="carousel slide mt-0 border-bottom shadow" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -100,7 +104,9 @@
                     <article class="card h-100 me-2 me-lg-0 bg-secondary text-white shadow"> 
                         <div class="card-body rounded">
                             <div class="d-flex mb-3">
-                                <img src="img/image-daniel.jpg" alt="" class="border border-white border-3 rounded-circle">
+                                <div class="imagen-perfiles">
+                                    <img src="img/image-daniel.jpg" alt="" class="border border-white border-3 rounded-circle">
+                                </div>
                                 <div class="ps-3">
                                     <h6 class="m-0 h6 texto-nom">Daniel Lopéz</h6>
                                     <p class="m-0 h7 texto-red">Vía Twitter</p>
@@ -116,7 +122,9 @@
                     <article class="card h-100 me-2 me-lg-0 bg-secondary text-white shadow"> 
                         <div class="card-body rounded">
                             <div class="d-flex mb-3">
-                                <img src="img/image-jesica.jpg" alt="" class="border border-white border-3 rounded-circle">
+                                <div class="imagen-perfiles">
+                                    <img src="img/image-jesica.jpg" alt="" class="border border-white border-3 rounded-circle">
+                                </div>
                                 <div class="ps-3">
                                     <h6 class="m-0 h6 texto-nom">Jesica Fernandéz</h6>
                                     <p class="m-0 h7 texto-red">Vía Facebook</p>
@@ -132,7 +140,9 @@
                     <article class="card h-100 me-2 me-lg-0 bg-secondary text-white shadow"> 
                         <div class="card-body rounded">
                             <div class="d-flex mb-3">
-                                <img src="img/image-marcos.jpg" alt="" class="border border-white border-3 rounded-circle">
+                                <div class="imagen-perfiles">
+                                    <img src="img/image-marcos.jpg" alt="" class="border border-white border-3 rounded-circle">
+                                </div>
                                 <div class="ps-3">
                                     <h6 class="m-0 h6 texto-nom">Marcos Gentilleti</h6>
                                     <p class="m-0 h7 texto-red">Vía Twitter</p>
@@ -149,7 +159,9 @@
                     <article class="card h-100 me-2 me-lg-0 bg-secondary text-white shadow"> 
                         <div class="card-body rounded">
                             <div class="d-flex mb-3">
-                                <img src="img/image-jonathan.jpg" alt="" class="border border-white border-3 rounded-circle">
+                                <div class="imagen-perfiles">
+                                    <img src="img/image-jonathan.jpg" alt="" class="border border-white border-3 rounded-circle">
+                                </div>
                                 <div class="ps-3">
                                     <h6 class="m-0 h6 texto-nom">Jonathan Peréz</h6>
                                     <p class="m-0 h7 texto-red">Vía Instagram</p>
@@ -166,15 +178,19 @@
         </div>
     </main>
 
+    <!--PIE DE PÁGINA: contiene el logo del banco y los derechos reservados-->
     <footer class="pie-pagina">
         <div class="container-fluid">
             <div class="d-flex flex-column align-items-center justify-content-center mt-5">
-                <img class="mb-2" src="img/logoitbankoficial.svg" alt="" width="100px">
+                <div class="imagen-footer">
+                    <img class="mb-2" src="img/logoitbankoficial.svg" alt="" width="100px">
+                </div>  
                 <h5 class="fs-6 text mb-5">© 2021 Company, Inc</h5>
             </div>
         </div>
     </footer>
 
+    <!--script correspondientes a Bootstrap para el funcionamiento de los elementos que requieren JavaScript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
