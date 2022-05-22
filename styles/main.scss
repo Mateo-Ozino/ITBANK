@@ -21,10 +21,11 @@ img {
     height: 100%;
 }
 
-.navbar {
+/* .navbar {
     box-shadow: $boxShadowNav;
     width: 100%
-}
+}  */
+
 .contenedor-botones-nav {
     @include flex (flex,column,end,none, none, none);
 }
