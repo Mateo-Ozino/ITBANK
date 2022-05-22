@@ -3,6 +3,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/*Paleta de colores*/
+$azul-claro: #2F86B8;
+$azul-oscuro: #0F0E80;
+$gris-claro: #BDBDBD;
+$gris-oscuro: #757575;
+
+/*Reseteo general de paddings, margenes y imagenes*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
 .navbar {
     box-shadow: $boxShadowNav;
     width: 100%
@@ -154,3 +172,47 @@
         @include texto (15px, center , #2A7FDF, 0, 0, none);
     }
 }
+
+/*Configuracion para las paginas index, nosotros y ayuda*/
+.contenido-principal {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.card, .card-body{
+    background-color: white;
+    border-color: $gris-oscuro;
+}
+
+.h6 {
+    color: black;
+}
+
+.h7{
+    color: $gris-claro;
+}
+
+.fs-6 {
+    color: $gris-claro;
+}
+
+.fs-3 {
+    color: $gris-oscuro;
+}
+
+.texto-nom{
+    color: $azul-oscuro;
+}
+
+.texto-red{
+    color: $gris-oscuro;
+}
+
+
+/*Configuracion chat de la pagina Ayuda para dispositivos pequeños*/
+@media screen and (min-width: 540px){
+    .chat{
+        width: 50vw;
+    }
+}
+
