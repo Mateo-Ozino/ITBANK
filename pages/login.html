@@ -1,98 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-	<link rel="stylesheet" href="../styles/main.css"/>
+	<link rel="stylesheet" href="../css/main.css"/>
 	<title>Login</title>
 </head>
 <body>
 	<!-- ENCABEZADO -->
 	<header>
-		<div class="collapse" id="navbarToggleExternalContent">
-			<div class="bg-dark p-4">
-				<h5 class="text-white h4 text-uppercase">itbank</h5>
-				<ul class="text-white nav-ul p-0">
-					<li class="p-2">Sobre nosotros</li>
-					<li class="p-2">Servicios</li>
-					<li class="p-2">Nueva tarjeta</li>
-					<li class="p-2">Contacto</li>
-				</ul>
+		<nav class="navbar navbarCustom">
+			<div class="contenedor-img">
+				<img src="../img/logo itbank oficial.svg" alt="logo"/>
 			</div>
-		</div>
-		<nav class="navbar navbar-dark">
-			<div class="container-fluid">
-				<button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="contenedor-img">
-					<img src="../img/itbank.jpeg" class="img-fluid" alt="logo" width="300px"/>
-				</div>
-				<div class="contenedor-botones-nav">
-					<button type="button" class="btn btn-sm botones-nav">Volver</button>
-					<button type="button" class="btn btn-sm botones-nav">Nueva tarjeta</button>
-				</div>
+			<div class="contenedor-botones-nav">
+				<a href="../preHomebanking.html">Volver</a>
 			</div>
 		</nav>
 	</header>
 	<!-- CONTENIDO PRINCIPAL -->
 	<main>
-	<!-----Contenedor de cuidado y formulario para ingresar----->
-		<div class="contenedor-warning">
-			<div class="warning-icono">
-				<i class="fa-solid fa-mobile-screen"></i>
+		<h1 class="text-center title">Bienvenido!</h1>
+		<section class="warningFlex">
+			<div class="contenedor-warning">
+				<div class="warning-icono">
+					<i class="fa-solid fa-mobile-screen"></i>
+				</div>
+				<div class="warning-texto">
+					<p>No brindes datos personales por correo, telefono, SMS o redes sociales.<br><a class="link-consejos" href="">Ingresa a este enlace para conocer mas consejos para tu seguridad</a></p>
+				</div>
 			</div>
-			<div class="warning-texto">
-				<p>
-					No brindes datos personales <br> por correo, telefono, SMS <br> o redes
-					sociales. <a class="link-consejos" href="">Ingresa a <br> este enlace para conocer mas <br> consejos para tu seguridad</a>
-				</p>
-			</div>
-		</div>
-		<form action="" class="contenedor-select">
-			<select class="form-select mb-3" aria-label="Default select example">
-				<option selected disabled value="">Tipo de documento</option>
-				<option value="1">DNI</option>
-				<option value="2">PASAPORTE</option>
-				<option value="3">RENAPER</option>
-			</select>
-			<div class="contenedor-form">
-				<div class="form-floating mb-3">
-					<input type="number" class="form-control" id="floatingInput" placeholder="43626067" />
+		</section>
+		<section class="section__formulario">
+			<form action="" class="form">
+				<select class="form-select" aria-label="Default select example">
+					<option selected disabled value="">Tipo de documento</option>
+					<option value="1">DNI</option>
+					<option value="2">PASAPORTE</option>
+					<option value="3">RENAPER</option>
+				</select>
+				<div class="form-floating">
+					<input type="number" class="form-control" id="floatingInput" placeholder="43626067" required>
 					<label for="floatingInput">DNI</label>
 				</div>
-				<div class="form-floating mb-3">
-					<input type="text" class="form-control" id="floatingPassword" placeholder="Usuario" />
+				<div class="form-floating">
+					<input type="text" class="form-control" id="floatingPassword" placeholder="Usuario" required>
 					<label for="floatingPassword">Usuario</label>
 				</div>
-				<div class="form-floating mb-4">
-					<input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
-					<label for="floatingPassword">Password</label>
+				<div class="form-floating">
+					<input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+					<label for="floatingPassword">Clave digital</label>
 				</div>
-			</div>
-		</form>
-		<div class="contenedor-check-keyboard">
-			<div class="form-check mb-3">
-				<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
-				<label class="form-check-label" for="flexCheckIndeterminate">
-					Recordar mi numero de documento
-				</label>
-			</div>
-			<div class="form-keyboard">
-				<i class="fa-solid fa-keyboard"> Teclado virtual</i>
-			</div>
-		</div>
-		<div class="contenedor-botones-form">
-			<button type="button" class="btn btn-lg">Registrarme</button>
-			<button type="button" class="btn btn-lg text-dark">Ingresar</button>
-		</div>
-		<div class="contenedor-recuperar-clave">
-			<h3><a href="">Olvide mi usuraio / clave digital</a></h3>
-		</div>
+				<div class="form-check form-switch">
+					<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" required>
+					<label class="form-check-label remember" for="flexSwitchCheckDefault">Recordar mi numero de documento</label>
+				</div>
+				<div class="form-keyboard">
+					<i class="fa-solid fa-keyboard"></i>
+					<p>Teclado virtual</p>
+				</div>
+				<div class="contenedor-botones-form">
+					<div class="boton-fin">
+						<a href="homebanking.html">Ingresar</a>
+					</div>
+				</div>
+				<div class="newClient">
+					<a href="register.html">Todavía no sos cliente? Sumate!</a>
+				</div>
+				</div>
+				<div class="contenedor-recuperar-clave mb-3">
+					<a href="forgot.html">Olvide mi usuraio / clave digital</a>
+				</div>
+			</form>
+		</section>
 	</main>
 
 	<!-- SCRIPTS -->

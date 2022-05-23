@@ -1,156 +1,280 @@
-@import "function";
-@import "variables";
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-.navbar {
+/* GENERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+@import "function";
+@import "variables";
+@import "homebanking";
+
+.title{
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: map-get($paleta, celeste);
+}
+.sub-title{
+    margin: 1rem;
+    margin-bottom: 0;
+}
+
+/* HEADER */
+.navbarCustom{
+    @include flex (row, no-wrap, space-between, center, 0);
+    background-color: white;
     box-shadow: $boxShadowNav;
     width: 100%
 }
-.contenedor-botones-nav {
-    @include flex (flex,column,end,none, none, none);
+.contenedor-img{
+    width: 10rem;
+    margin-left: 1rem;
 }
-
-.nav-ul {
-    @include listas (none, 10px)
-}
-
-.botones-nav {
-    @include contenedor (#fff,#2A7FDF,20px, 215px, 5px);
-}
-
-
-@media screen and (max-width: 784px) {
-    .contenedor-botones-nav {
-        display: none;
+.contenedor-botones-nav{
+    margin-right: 1rem;
+    background-color: map-get($paleta, azulClaro);
+    border: 2px solid map-get($paleta, azulClaro);
+    border-radius: 10px;
+    width: fit-content;
+    &:hover{
+        background-color: map-get($paleta, blanco);
     }
-    .img-fluid {
-        width: 200px;
-    }
-}
-
-
-.contenedor-warning {
-    @include flex (flex, row, none, none, none, none);
-    @include contenedor (#000, #fff, 0px, 500px, auto);
-    margin-top: 100px;
-    box-shadow: $boxShadowWarning;
-    height: 200px;
-}
-
-.warning-texto {
-    justify-content: end;
-    @include texto ( 20px,left, #000 , 0px, auto, none);
-}
-
-.warning-icono {
-    @include flex (flex, row, none, none, none,0px);
-    @include icono (50px, #2A7FDF, 20px);
-}
-
-.link-consejos {
-    @include texto (none, none, #2A7FDF, none, none, none);
-}
-
-@media screen and (max-width:784px) {
-    .contenedor-warning {
-        @include contenedor (#000, #fff, 0px, 100%, auto);
-        margin-top: 50px
-    }
-
-    .warning-texto {
-        justify-content: end;
-        @include texto ( 17px,left, #000 , 0px, auto, none);
-    }
-}
-
-
-.contenedor-form {
-    @include flex (flex, column, center, none, 500px, auto)
-}
-
-.form-select {
-    @include flex (flex, row, center, none, 500px, auto);
-    @include contenedor (none, #C4C4C4 , none, none, none);
-    margin-top: 50px;
-}
-
-.form-floating input{
-    @include contenedor (none, #C4C4C4 , none, none, none);
-}
-
-.contenedor-check-keyboard{
-    @include flex (flex, column, center, none, 500px, auto);
-    padding: 10px;
-}
-
-.form-check {
-    @include flex (flex, row, center, none, 500px, auto);
-}
-
-.form-keyboard {
-    @include flex (flex, row, center, none, 500px, auto);
-    i{
-        @include texto (15px ,center,#000, 0px, 5px, none);
-    }
-}
-
-.contenedor-botones-form {
-    @include flex (flex,row,center,none, none, 30px);
-    button{
-        @include contenedor (#2A7FDF, #C4C4C4,none, none, 0px 110px );
-    }
-}
-
-.contenedor-recuperar-clave{
-    @include flex (flex,row,center,none, none, 0);
     a{
-        @include texto (20px, center , #2A7FDF, 0, 0, none);
+        padding: 0.5rem;
+        text-align: center;
+        color: map-get($paleta, blanco);
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: 500;
+        &:hover{
+            color: black;
+        }
     }
 }
 
 
-@media screen and (max-width:784px) {
-    .contenedor-form {
-        @include flex (flex, column, center, none, 100%, auto); 
+/* WARNING */
+.warningFlex{
+    @include flex(row, no-wrap, center, center, 0)
+}
+.contenedor-warning {
+    @include flex(row, no-wrap, space-between, center, 1rem);
+    width: 25rem;
+    margin-top: 1rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0.5rem;
+    box-shadow: $boxShadowWarning;
+}
+.warning-texto {
+    max-width: 35ch;
+    font-size: 20px;
+    p{
+        margin: 0;
+    }
+}
+.warning-icono {
+    @include icono (50px, map-get($paleta, celeste));
+}
+.link-consejos {
+    color: map-get($paleta, celeste);
+    text-decoration: none
+}
+
+
+/* FORMS LOGIN-REGISTER-FORGOT */
+.section__formulario{
+    @include flex(column, no-wrap,center, center, 1rem);
+}
+.form{
+    @include flex(column, no-wrap, center, center, 1rem);
+    margin-top: 1rem;   
+    width: 40%;
+}
+.form-floating{
+    width: 100%;
+}
+.form-keyboard {
+    @include flex(row, no-wrap, center, center, 1rem);
+    p{
+        margin: 0;
+    }
+    i{
+        margin: 0;
+        line-height: 0;
+    }
+}
+.contenedor-botones-form{
+    @include flex(row, no-wrap, space-between, center, 1rem);
+}
+.boton-fin{
+    @extend .contenedor-botones-nav;
+}
+.form-switch{
+    @include flex(row, no-wrap, center, center, 1rem);
+}
+.remember{
+    font-weight: 500;
+    font-size: 20px;
+}
+.newClient{
+    background-color: map-get($paleta, azulOscuro);
+    color: map-get($paleta, blanco);
+    text-align: center;
+    border: 2px solid map-get($paleta, azulOscuro);;
+    border-radius: 10px;
+    &:hover{
+        background-color: map-get($paleta, blanco);
+    }
+    a{
+        font-weight: 500;
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem;
+        font-size: 20px;
+        margin: 0;
+        &:hover{
+            color: black;
+        }
+    }
+}
+.contenedor-recuperar-clave{
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    a{
+        color: #2A7FDF;
+        text-decoration: none;
+    }
+}
+.contenedor-select{
+    width: 100%;
+}
+.contenedor-check{
+    @include flex(column, no-wrap, center, center, 1rem);
+}
+.form-check-label{
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}
+.form-check{
+    margin: 0;
+    padding: 0;
+}
+
+#pasoUsuario{
+    display: none;
+    flex-direction: column;
+}
+#pasoClave{
+    display: none;
+    flex-direction: column;
+}
+.boton-corroborar{
+    background-color: map-get($paleta, azulClaro);
+    color: white;
+    padding: 0.5rem;
+    font-size: 20px;
+    border: 2px solid map-get($paleta, azulClaro);
+    border-radius: 10px;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+    .form{
+        width: 90%;
+    }
+    .contenedor-warning{
+        width: 90%;
+        p{
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+    .contenedor-img{
+        width: 8rem;
+    }
+    .remember{
+        font-size: 16px;
+    }
+    .inputHeight{
+        height: 4rem !important;
     }
 
-    .contenedor-select {
-        margin: auto;
-        padding: 10px;
-        width: 100%;
+    .titulo{
+        font-size: 27px;
+    }
+    .btn{
+        width: 5.9rem;
+        p{
+            font-size: 20px;
+        }
+    }
+    .logo{
+        width: 5rem;
     }
 
-    .form-select {
-        @include flex (flex, row, center, none, 100%, auto);
-        @include contenedor (none, #C4C4C4 , none, none, none);
-        margin-top: 50px;
-        padding: 10px;
+    .mainHb__section1{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .menuRapido{
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width: 768px){
+    .form{
+        width: 25rem;
+    }
+    .contenedor-img{
+        width: 8rem;
+    }
+    .remember{
+        font-size: 18px;
     }
 
-    .contenedor-check-keyboard{
-        @include flex (flex, column, center, none, 100%, auto);
-        padding: 10px
+    .titulo{
+        font-size: 30px;
+    }
+    .btn{
+        width: 6rem;
+        p{
+            font-size: 20px;
+        }
+    }
+    .logo{
+        width: 5rem;
     }
 
-    .form-check {
-        @include flex (flex, row, center, none, 100%, auto);
+    .mainHb__section1{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
-    
-    .form-keyboard {
-        @include flex (flex, row, center, none, 100%, auto);
-    }
-
-    .contenedor-botones-form {
-        @include flex (flex,column,center,none, none, 0px);
-        padding: 10px
-    }
-
-    .contenedor-botones-form button {
-        @include contenedor (#2A7FDF, #C4C4C4,none, none, 10px 0px );
-    }
-
-    .contenedor-recuperar-clave a {
-        @include texto (15px, center , #2A7FDF, 0, 0, none);
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    .form{
+        width: 28rem;
     }
 }

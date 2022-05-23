@@ -1,0 +1,150 @@
+@import "function";
+@import "variables";
+
+.navHb{
+    border-bottom: 4px solid;
+    border-color: map-get($paleta, azulOscuro);
+}
+.contenedor{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+.titulo{
+    font-size: 45px;
+    margin: 0;
+}
+.logo{
+    margin-left: 0.5rem;
+    width: 7rem;
+}
+.btn{
+    width: 7rem;
+    padding: 0;
+    margin-right: 0.5rem;
+    border: 2px solid;
+    border-radius: 15px;
+    background-color: map-get($paleta, azulOscuro);
+    p{
+        font-size: 25px;
+        margin: 0;
+    }
+    &:hover{
+        background-color: white;
+        color: map-get($paleta, azulOscuro);
+    }
+}
+.offcanvas{
+    &-header{
+        h1{
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+    }
+    &-body{
+        h2{
+            color: rgb(105, 105, 105);
+            border-bottom: 3px solid;
+            border-color: map-get($paleta, azulClaro);
+        }
+        ul{
+            li{
+                margin-bottom: 0.5rem;
+                a{
+                    color: black;
+                    text-decoration: none;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+.fa-times{
+    font-size: 25px;
+}
+.btnPropio{
+    margin-right: 1rem;
+    border: 2px solid;
+    background-color: map-get($paleta, azulOscuro);
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: white;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    &:hover{
+        background-color: white;
+        color: map-get($paleta, azulOscuro);
+    }
+}
+
+
+.mainHb__section1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.card-header{
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    background-color: $colorPrincipalCards;
+}
+.card-footer{
+    background-color: $colorPrincipalCards;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    a{
+        color: white;
+        text-decoration: none;
+    }
+}
+.menuRapido{
+    @include flex(row, wrap, center, center, 2rem);
+    margin-bottom: 3rem;
+    padding: 0;
+    li{
+        list-style: none;
+        a{
+            display: inline;
+            background-color: map-get($paleta, azulClaro);
+            color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 0.5rem;
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            &:hover{
+                color: black;
+                background-color: white;
+                box-shadow: 8px 8px 6px 1px rgba(181,188,194,1);
+            }
+        }
+    }
+}
+.offcanvas-body{
+    .exit{
+        border: 2px solid map-get($paleta, azulOscuro);
+        border-radius: 10px;
+        &:hover{
+            background-color: map-get($paleta, azulOscuro);
+        }
+        a{
+            color: map-get($paleta, azulOscuro);    
+            text-decoration: none;
+            &:hover{
+                color: white;
+            }
+        }
+    }
+}
+
+

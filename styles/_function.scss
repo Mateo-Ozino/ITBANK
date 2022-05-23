@@ -1,43 +1,24 @@
-@mixin flex ($display,$flexDirection, $justifyContentEnd, $alingItems, $width, $margin) {
-    display: $display;
+@mixin flex ($flexDirection, $flexWrap, $justifyContent, $alignItems, $gap) {
+    display: flex;
     flex-direction: $flexDirection;
-    justify-content: $justifyContentEnd;
-    align-items: $alingItems;
-    width: $width;
-    margin: $margin;
+    flex-wrap: $flexWrap;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    gap: $gap;
 }
 
-
-@mixin contenedor ( $color, $background, $borderRadius, $width, $margin) {
-    color: $color;
-    background-color: $background;
-    border-radius: $borderRadius;
-    width: $width;
-    margin: $margin;
-}
-
-@mixin listas ($style, $padding) {
-    list-style: $style;
-    padding: $padding;
-}
-
-
-@mixin texto ( $fontSize,$textAling, $Color, $Padding, $margin, $textDecoration) {
+@mixin icono ($fontSize, $color) {
     font-size: $fontSize;
-    text-align: $textAling;
-    color:$Color ;
-    padding: $Padding;
-    margin: $margin;
-    text-decoration: $textDecoration;
-    
+    color: $color;
 }
 
-@mixin icono ($fontSIze, $Color, $margin) {
-    font-size:$fontSIze ;
-    color: $Color;
-    margin: $margin;
+@mixin grid ($cantColumnas, $medidaColumnas, $cantFilas, $medidaFilas, $rowGap, $columnGap) {
+    display: grid;
+    grid-template-columns: repeat($cantColumnas, $medidaColumnas);
+    grid-template-rows: repeat($cantFilas, $medidaFilas);
+    row-gap: $rowGap;
+    column-gap: $columnGap;
 }
-
 
 
 
