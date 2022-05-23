@@ -11,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.titulo{
+.tituloHb{
     font-size: 45px;
     margin: 0;
 }
@@ -72,13 +72,11 @@
     padding: 0.5rem;
     border-radius: 50%;
     color: white;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     &:hover{
         background-color: white;
         color: map-get($paleta, azulOscuro);
     }
 }
-
 
 .mainHb__section1{
     display: grid;
