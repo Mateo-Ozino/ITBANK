@@ -1,0 +1,5 @@
+# Ignora el package-lock
+package-lock.json
+
+#ignora la carpeta de configuraciones de vscode
+.vscode/
