@@ -4,8 +4,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 img {
@@ -14,8 +13,8 @@ img {
 }
 
 /*Configuracion para las paginas index, nosotros y ayuda*/
-.imagen-nav, .imagen-footer {
-  width: 100px;
+.imagen-nav img, .imagen-footer img {
+  width: 7rem;
 }
 
 .imagen-perfiles {
@@ -26,6 +25,10 @@ img {
 .boton-hb {
   color: #0F0E80;
   border-color: #0F0E80;
+}
+.boton-hb a {
+  text-decoration: none;
+  color: black;
 }
 
 .contenido-principal {
@@ -43,11 +46,11 @@ img {
 }
 
 .h7 {
-  color: #BDBDBD;
+  color: #757575;
 }
 
 .fs-6 {
-  color: #BDBDBD;
+  color: #757575;
 }
 
 .fs-3 {
@@ -55,7 +58,7 @@ img {
 }
 
 .texto-nom {
-  color: #0F0E80;
+  color: #757575;
 }
 
 .texto-red {
@@ -68,4 +71,5 @@ img {
     width: 50vw;
   }
 }
+
 /*# sourceMappingURL=main.css.map */

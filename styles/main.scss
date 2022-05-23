@@ -1,25 +1,31 @@
-/*Paleta de colores*/
-$azul-claro: #2F86B8;
-$azul-oscuro: #0F0E80;
-$gris-claro: #BDBDBD;
-$gris-oscuro: #757575;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+@import "variables";
+@import "function";
 
 /*Reseteo general de paddings, margenes y imagenes*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
-
 img {
     width: 100%;
     height: 100%;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 
 /*Configuracion para las paginas index, nosotros y ayuda*/
 .imagen-nav, .imagen-footer{
-    width: 100px;
+    img{
+        width: 7rem;
+    }
 }
 
 .imagen-perfiles{
@@ -28,8 +34,12 @@ img {
 }
 
 .boton-hb{
-    color: $azul-oscuro;
-    border-color: $azul-oscuro;
+    color: map-get($paleta, azulOscuro);
+    border-color: map-get($paleta, azulOscuro);
+    a{
+        text-decoration: none;
+        color: black;
+    }
 }
 
 .contenido-principal {
@@ -39,7 +49,7 @@ img {
 
 .card, .card-body{
     background-color: white;
-    border-color: $gris-oscuro;
+    border-color: map-get($paleta, gris);
 }
 
 .h6 {
@@ -47,23 +57,23 @@ img {
 }
 
 .h7{
-    color: $gris-claro;
+    color: map-get($paleta, gris);
 }
 
 .fs-6 {
-    color: $gris-claro;
+    color: map-get($paleta, gris);
 }
 
 .fs-3 {
-    color: $gris-oscuro;
+    color: map-get($paleta, gris);
 }
 
 .texto-nom{
-    color: $azul-oscuro;
+    color: map-get($paleta, gris);
 }
 
 .texto-red{
-    color: $gris-oscuro;
+    color: map-get($paleta, gris);
 }
 
 
