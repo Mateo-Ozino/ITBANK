@@ -6,6 +6,8 @@
 
 /*Reseteo general de paddings, margenes y imagenes*/
 * {
+/* GENERAL */
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -324,7 +326,275 @@ html{
 
     .mx-cont-baner {
         height: 260px;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+@import "function";
+@import "variables";
+@import "homebanking";
+
+.title{
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: map-get($paleta, celeste);
+}
+.sub-title{
+    margin: 1rem;
+    margin-bottom: 0;
+}
+
+/* HEADER */
+.navbarCustom{
+    @include flex (row, no-wrap, space-between, center, 0);
+    background-color: white;
+    box-shadow: $boxShadowNav;
+    width: 100%
+}
+.contenedor-img{
+    width: 10rem;
+    margin-left: 1rem;
+}
+.contenedor-botones-nav{
+    margin-right: 1rem;
+    background-color: map-get($paleta, azulClaro);
+    border: 2px solid map-get($paleta, azulClaro);
+    border-radius: 10px;
+    width: fit-content;
+    &:hover{
+        background-color: map-get($paleta, blanco);
+    }
+    a{
+        padding: 0.5rem;
+        text-align: center;
+        color: map-get($paleta, blanco);
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: 500;
+        &:hover{
+            color: black;
+        }
     }
 }
 
-/* -------End Pre Homebanking estilos ------*/
+
+/* WARNING */
+.warningFlex{
+    @include flex(row, no-wrap, center, center, 0)
+}
+.contenedor-warning {
+    @include flex(row, no-wrap, space-between, center, 1rem);
+    width: 25rem;
+    margin-top: 1rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0.5rem;
+    box-shadow: $boxShadowWarning;
+}
+.warning-texto {
+    max-width: 35ch;
+    font-size: 20px;
+    p{
+        margin: 0;
+    }
+}
+.warning-icono {
+    @include icono (50px, map-get($paleta, celeste));
+}
+.link-consejos {
+    color: map-get($paleta, celeste);
+    text-decoration: none
+}
+
+
+/* FORMS LOGIN-REGISTER-FORGOT */
+.section__formulario{
+    @include flex(column, no-wrap,center, center, 1rem);
+}
+.form{
+    @include flex(column, no-wrap, center, center, 1rem);
+    margin-top: 1rem;   
+    width: 40%;
+}
+.form-floating{
+    width: 100%;
+}
+.form-keyboard {
+    @include flex(row, no-wrap, center, center, 1rem);
+    p{
+        margin: 0;
+    }
+    i{
+        margin: 0;
+        line-height: 0;
+    }
+}
+.contenedor-botones-form{
+    @include flex(row, no-wrap, space-between, center, 1rem);
+}
+.boton-fin{
+    @extend .contenedor-botones-nav;
+}
+.form-switch{
+    @include flex(row, no-wrap, center, center, 1rem);
+}
+.remember{
+    font-weight: 500;
+    font-size: 20px;
+}
+.newClient{
+    background-color: map-get($paleta, azulOscuro);
+    color: map-get($paleta, blanco);
+    text-align: center;
+    border: 2px solid map-get($paleta, azulOscuro);;
+    border-radius: 10px;
+    &:hover{
+        background-color: map-get($paleta, blanco);
+    }
+    a{
+        font-weight: 500;
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem;
+        font-size: 20px;
+        margin: 0;
+        &:hover{
+            color: black;
+        }
+    }
+}
+.contenedor-recuperar-clave{
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    a{
+        color: #2A7FDF;
+        text-decoration: none;
+    }
+}
+.contenedor-select{
+    width: 100%;
+}
+.contenedor-check{
+    @include flex(column, no-wrap, center, center, 1rem);
+}
+.form-check-label{
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}
+.form-check{
+    margin: 0;
+    padding: 0;
+}
+
+#pasoUsuario{
+    display: none;
+    flex-direction: column;
+}
+#pasoClave{
+    display: none;
+    flex-direction: column;
+}
+.boton-corroborar{
+    background-color: map-get($paleta, azulClaro);
+    color: white;
+    padding: 0.5rem;
+    font-size: 20px;
+    border: 2px solid map-get($paleta, azulClaro);
+    border-radius: 10px;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+    .form{
+        width: 90%;
+    }
+    .contenedor-warning{
+        width: 90%;
+        p{
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+    .contenedor-img{
+        width: 8rem;
+    }
+    .remember{
+        font-size: 16px;
+    }
+    .inputHeight{
+        height: 4rem !important;
+    }
+
+    .titulo{
+        font-size: 27px;
+    }
+    .btn{
+        width: 5.9rem;
+        p{
+            font-size: 20px;
+        }
+    }
+    .logo{
+        width: 5rem;
+    }
+
+    .mainHb__section1{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .menuRapido{
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width: 768px){
+    .form{
+        width: 25rem;
+    }
+    .contenedor-img{
+        width: 8rem;
+    }
+    .remember{
+        font-size: 18px;
+    }
+
+    .titulo{
+        font-size: 30px;
+    }
+    .btn{
+        width: 6rem;
+        p{
+            font-size: 20px;
+        }
+    }
+    .logo{
+        width: 5rem;
+    }
+
+    .mainHb__section1{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    .form{
+        width: 28rem;
+    }
+}
