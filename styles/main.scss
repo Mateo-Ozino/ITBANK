@@ -437,6 +437,20 @@ html{
     .mx-cont-baner {
         height: 260px;
     }
+
+    .calculadora{
+        width: 90%;
+        width: 90%;
+        height: 550px;
+        right: 15px;
+        bottom: 75px;
+    }
+    .medio{
+        overflow-x: scroll;
+    }
+    .tablaHeader{
+        font-size: 16px;
+    }
 }
 @media only screen and (min-width: 425px) and (max-width: 768px){
     .form{
@@ -504,6 +518,22 @@ html{
 
     .mx-cont-baner {
         height: 260px;
+    }
+
+    .calculadora{
+        width: 90%;
+        height: 550px;
+        right: 35px;
+        bottom: 75px;
+    }
+    .medio{
+        overflow-x: scroll;
+    }
+    .tablaHeader{
+        font-size: 18px;
+    }
+    .abrir-calculadora{
+        right: 10px;
     }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){

@@ -1,57 +1,67 @@
 @import "function";
 @import "variables";
 
-.navHb{
+.navHb {
     border-bottom: 4px solid;
     border-color: map-get($paleta, azulOscuro);
 }
-.contenedor{
+
+.contenedor {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
 }
-.tituloHb{
+
+.tituloHb {
     font-size: 45px;
     margin: 0;
 }
-.logo{
+
+.logo {
     margin-left: 0.5rem;
     width: 7rem;
 }
-.btn{
+
+.btn {
     width: 7rem;
     padding: 0;
     margin-right: 0.5rem;
     border: 2px solid;
     border-radius: 15px;
     background-color: map-get($paleta, azulOscuro);
-    p{
+
+    p {
         font-size: 25px;
         margin: 0;
     }
-    &:hover{
+
+    &:hover {
         background-color: white;
         color: map-get($paleta, azulOscuro);
     }
 }
-.offcanvas{
-    &-header{
-        h1{
+
+.offcanvas {
+    &-header {
+        h1 {
             font-size: 36px;
             text-transform: uppercase;
         }
     }
-    &-body{
-        h2{
+
+    &-body {
+        h2 {
             color: rgb(105, 105, 105);
             border-bottom: 3px solid;
             border-color: map-get($paleta, azulClaro);
         }
-        ul{
-            li{
+
+        ul {
+            li {
                 margin-bottom: 0.5rem;
-                a{
+
+                a {
                     color: black;
                     text-decoration: none;
                     font-size: 18px;
@@ -60,10 +70,12 @@
         }
     }
 }
-.fa-times{
+
+.fa-times {
     font-size: 25px;
 }
-.btnPropio{
+
+.btnPropio {
     margin-right: 1rem;
     border: 2px solid;
     background-color: map-get($paleta, azulOscuro);
@@ -72,13 +84,14 @@
     padding: 0.5rem;
     border-radius: 50%;
     color: white;
-    &:hover{
+
+    &:hover {
         background-color: white;
         color: map-get($paleta, azulOscuro);
     }
 }
 
-.mainHb__section1{
+.mainHb__section1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -86,29 +99,35 @@
     margin-left: 1rem;
     margin-right: 1rem;
 }
-.card-header{
+
+.card-header {
     font-size: 30px;
     font-weight: 500;
     color: white;
     background-color: $colorPrincipalCards;
 }
-.card-footer{
+
+.card-footer {
     background-color: $colorPrincipalCards;
     font-weight: 500;
     font-size: 20px;
     color: white;
-    a{
+
+    a {
         color: white;
         text-decoration: none;
     }
 }
-.menuRapido{
+
+.menuRapido {
     @include flex(row, wrap, center, center, 2rem);
     margin-bottom: 3rem;
     padding: 0;
-    li{
+
+    li {
         list-style: none;
-        a{
+
+        a {
             display: inline;
             background-color: map-get($paleta, azulClaro);
             color: white;
@@ -120,29 +139,141 @@
             text-decoration: none;
             font-size: 20px;
             font-weight: bold;
-            &:hover{
+
+            &:hover {
                 color: black;
                 background-color: white;
-                box-shadow: 8px 8px 6px 1px rgba(181,188,194,1);
+                box-shadow: 8px 8px 6px 1px rgba(181, 188, 194, 1);
             }
         }
     }
 }
-.offcanvas-body{
-    .exit{
+
+.offcanvas-body {
+    .exit {
         border: 2px solid map-get($paleta, azulOscuro);
         border-radius: 10px;
-        &:hover{
+
+        &:hover {
             background-color: map-get($paleta, azulOscuro);
         }
-        a{
-            color: map-get($paleta, azulOscuro);    
+
+        a {
+            color: map-get($paleta, azulOscuro);
             text-decoration: none;
-            &:hover{
+
+            &:hover {
                 color: white;
             }
         }
     }
 }
 
+//ESTILOS CALCULADORA
+.abrir-calculadora {
+    background-color: #00E000;
+    border: 2px solid #00A000;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}
 
+.abrir-calculadora:hover {
+    background-color: white
+}
+
+.imagen-calculadora {
+    margin: 0 auto;
+    padding-bottom: 2px;
+    width: 30px;
+}
+
+.calculadora {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    width: 650px;
+    height: 450px;
+    position: fixed;
+    right: 65px;
+    bottom: 65px;
+}
+
+.calculadora h3 {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.calculadora h4 {
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+#inputNombre {
+    margin-bottom: 5px;
+}
+
+.calculadora #agregar,
+#reset {
+    font-weight: bold;
+    width: 70px;
+    font-size: 0.75rem;
+    margin: 0.25rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.25rem;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+#reset {
+    background-color: red;
+}
+
+.arriba {
+    border-radius: 10px 10px 0 0;
+    background-color: #5C73F2;
+    padding-left: 5px;
+    padding-bottom: 2px;
+}
+
+.medio {
+    justify-self: flex-start;
+    margin-bottom: auto;
+    padding-left: 5px;
+    overflow-x: hidden;
+}
+
+.abajo {
+    color: white;
+    border-radius: 0 0 10px 10px;
+    padding-left: 5px;
+    background-color: #5C73F2;
+}
+
+.sub-contenedorArriba{
+    display: flex;
+    align-items: center;
+    .contenedorInput{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .contenedorBtn{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.tablaHeader{
+    vertical-align: middle;
+}
