@@ -170,110 +170,97 @@
 }
 
 //ESTILOS CALCULADORA
-.abrir-calculadora {
-    background-color: #00E000;
-    border: 2px solid #00A000;
-    border-radius: 100%;
-    width: 40px;
-    height: 40px;
+.botonCalcu{
+    width: fit-content;
+    height: 2.7rem;
+    border: 2px solid;
+    border-radius: 50%;
+    background-color: #0F0E80;
     position: fixed;
-    right: 30px;
-    bottom: 30px;
+    bottom: 15px;
+    right: 15px;
+    &:hover{
+        background-color: white;
+        color: black;
+    }
+    .fa-calculator{
+        color: white;
+        padding: .7rem;
+        font-size: 25px;
+        &:hover{
+            color: black;
+        }
+    }
 }
-
-.abrir-calculadora:hover {
-    background-color: white
-}
-
-.imagen-calculadora {
-    margin: 0 auto;
-    padding-bottom: 2px;
-    width: 30px;
-}
-
-.calculadora {
+.modal-header{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    color: black;
-    border-radius: 10px;
-    background-color: white;
-    width: 650px;
-    height: 450px;
-    position: fixed;
-    right: 65px;
-    bottom: 65px;
-}
-
-.calculadora h3 {
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-}
-
-.calculadora h4 {
-    color: black;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-}
-
-#inputNombre {
-    margin-bottom: 5px;
-}
-
-.calculadora #agregar,
-#reset {
-    font-weight: bold;
-    width: 70px;
-    font-size: 0.75rem;
-    margin: 0.25rem;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 0.25rem;
-    background-color: green;
-    color: white;
-    cursor: pointer;
-}
-
-#reset {
-    background-color: red;
-}
-
-.arriba {
-    border-radius: 10px 10px 0 0;
-    background-color: #5C73F2;
-    padding-left: 5px;
-    padding-bottom: 2px;
-}
-
-.medio {
-    justify-self: flex-start;
-    margin-bottom: auto;
-    padding-left: 5px;
-    overflow-x: hidden;
-}
-
-.abajo {
-    color: white;
-    border-radius: 0 0 10px 10px;
-    padding-left: 5px;
-    background-color: #5C73F2;
-}
-
-.sub-contenedorArriba{
-    display: flex;
+    justify-content: center;
     align-items: center;
-    .contenedorInput{
+    background-color: #5C73F2;
+    .sub-contenedorArriba{
         display: flex;
+        width: 100%;
         flex-direction: column;
-        gap: 8px;
-    }
-    .contenedorBtn{
-        display: flex;
-        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        .contenedorInput{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            .btnReset{
+                color: white;
+                background-color: rgb(255, 0, 0);
+                padding-left: .3rem;
+                padding-right: .3rem;
+                font-size: 25px;
+                border: none;
+                border-radius: 10px;
+                margin: 0;
+                &:hover{
+                    color: rgb(255, 0, 0);
+                }
+            }
+        }
+        .contenedorBtn{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            .btnAñadir{
+                color: white;
+                background-color: rgb(0, 185, 0);
+                padding-left: .3rem;
+                padding-right: .3rem;
+                font-size: 25px;
+                border: none;
+                border-radius: 10px;
+                margin: 0;
+                &:hover{
+                    color: rgb(0, 185, 0);
+                }
+            }
+        }
     }
 }
-
-.tablaHeader{
-    vertical-align: middle;
+.modal-body{
+    padding: 0;
+    .tablaHeader{
+        font-size: 18px;
+    }
+}
+.modal-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5C73F2;
+    color: white;
+    .btnClose{
+        font-size: 25px;
+        color: white;
+        border: none;
+    }
 }

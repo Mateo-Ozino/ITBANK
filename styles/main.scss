@@ -451,6 +451,23 @@ html{
     .tablaHeader{
         font-size: 16px;
     }
+
+    .btnReset{
+        width: 150px;
+    }
+    .btnAñadir{
+        width: 150px;
+    }
+    .tablaHeader{
+        font-size: 16px;
+        vertical-align: middle;
+    }
+    .modal-footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 @media only screen and (min-width: 425px) and (max-width: 768px){
     .form{
@@ -520,21 +537,16 @@ html{
         height: 260px;
     }
 
-    .calculadora{
-        width: 90%;
-        height: 550px;
-        right: 35px;
-        bottom: 75px;
+    .btnReset{
+        width: 150px;
     }
-    .medio{
-        overflow-x: scroll;
+    .btnAñadir{
+        width: 150px;
     }
-    .tablaHeader{
-        font-size: 18px;
+    .sub-contenedorArriba{
+        align-items: center;
     }
-    .abrir-calculadora{
-        right: 10px;
-    }
+
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){
     .form{

@@ -154,3 +154,8 @@ function reset(){
     nombres = [];
     montos = [];
 }
+
+function borradoInputs(){
+    inputNombre.value = '';
+    inputMonto.value = '';
+}

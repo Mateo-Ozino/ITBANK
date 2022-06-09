@@ -100,36 +100,43 @@
             </section>
         </section>
         <!--CALCULADORA DE GASTOS-->
-        <div class="calculadora">
-            <div class="arriba">
-                <h3>Dividir Gastos</h3>
-                <h4>Añada a sus amigos!<br></h4>
-                <div class="sub-contenedorArriba">
-                    <div class="contenedorInput">
-                        <input type="text" id="inputNombre" maxlength="14" name="inputNombre" placeholder="Nombre">
-                        <input type="number" id="inputMonto" name="inputMonto" placeholder="Monto">
+        <button class="botonCalcu" data-bs-toggle="modal" data-bs-target="#Modal"><i class="fa-solid fa-calculator"></i></button>
+        <!-- Modal -->
+        <div class="modal fade" id="Modal">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h3>Dividir Gastos</h3>
+                        <h4>Añada a sus amigos!</h4>
+                        <div class="sub-contenedorArriba">
+                            <div class="contenedorInput">
+                                <input type="text" id="inputNombre" class="form-control" maxlength="14" name="inputNombre" placeholder="Nombre">
+                                <button id="reset" class="btn btnReset" onclick="reset()">Reset</button>
+                            </div>
+                            <div class="contenedorBtn">
+                                <input type="number" id="inputMonto" class="form-control" name="inputMonto" placeholder="Monto">
+                                <button id="agregar" class="btn btnAñadir" onclick="calculo()">Añadir</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="contenedorBtn">
-                        <button id="reset" onclick="reset()">Reset</button>
-                        <button id="agregar" onclick="calculo()">Añadir</button>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <section id="contenedorTablaJS">
+                            <table class="table text-center" id="table"></table>
+                        </section>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <div class="abajo">
+                            <div id="contenedorMontoTotal"></div>
+                            <div id="contenedorDivGastos"></div>
+                        </div>
+                        <button type="button" class="btn btnClose" data-bs-dismiss="modal" onclick="borradoInputs()">Close</button>
                     </div>
                 </div>
             </div>
-            <div class="medio">
-                <section id="contenedorTablaJS">
-                    <table class="table text-center" id="table"></table>
-                </section>
-            </div>
-            <div class="abajo">
-                <div id="contenedorMontoTotal"></div>
-                <div id="contenedorDivGastos"></div>
-            </div>
         </div>
-        <button class="abrir-calculadora" onclick="mostrarCalculadora()">
-            <div class="imagen-calculadora">
-                <img src="../img/calculadora.png" alt="calculadora">
-            </div>
-        </button>
     </main>
 
     <!-- SCRIPTS -->
