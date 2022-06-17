@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
 }
 img {
     width: 100%;
@@ -63,6 +63,25 @@ html{
 .texto-red{
     color: map-get($paleta, gris);
 }
+
+.divisa-card {
+    width: 100%;
+    padding: 8px 0;
+    height: 250px;
+}
+
+.contenedor-img-dolar {
+    width: 2rem;
+}
+
+.variacion-negativa {
+    color: rgb(234, 59, 59);
+}
+
+.variacion-positiva {
+    color: rgb(74, 216, 74);
+}
+
 
 /* -------Pre Homebanking estilos ------*/
 .contenedor {
