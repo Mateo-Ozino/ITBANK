@@ -6,7 +6,19 @@ import time
 import datetime
 import csv
 
-HEADER = ["NroCheque", "CodigoBanco", "CodigoScurusal", "NumeroCuentaOrigen", "NumeroCuentaDestino", "Valor", "FechaOrigen", "FechaPago", "DNI", "Tipo", "Estado"]
+HEADER = [
+    "NroCheque",
+    "CodigoBanco", 
+    "CodigoSucursal", 
+    "NumeroCuentaOrigen", 
+    "NumeroCuentaDestino", 
+    "Valor", 
+    "FechaOrigen", 
+    "FechaPago", 
+    "DNI", 
+    "Tipo", 
+    "Estado",
+    ]
 SALIDA_VALIDA = {"csv", "pantalla"}
 ESTADO_VALIDO = {"aprobado", "pendiente", "rechazado"}
 TIPO_VALIDO = {"emitido", "depositado"}
@@ -24,8 +36,8 @@ def filtrado(cheque, dni, tipo, estado, rango_fecha):
     Devuelve True si el cheque las cumple, False en caso contrario.
     """
     if cheque["DNI"] != dni: return False
-    if cheque["Tipo"] != tipo: return False
-    if estado and cheque["Estado"] != estado: return False
+    if cheque["Tipo"].lower() != tipo.lower(): return False
+    if estado and cheque["Estado"].lower() != estado.lower(): return False
     if rango_fecha and (float(cheque["FechaOrigen"]) < rango_fecha[0] or float(cheque["FechaPago"]) > rango_fecha[1]): return False
     return True
 
@@ -41,7 +53,7 @@ def filtro(path, dni, tipo, estado, rango_fecha):
         print("Archivo no encontrado.")
         return None
     cheques_filtrados = []
-    numero_cheques = {}
+    numero_cheques = set()
     with archivo:
         cheques = csv.DictReader(archivo)
         for cheque in cheques:
@@ -65,6 +77,24 @@ def crear_csv(cheques):
         cheques_writer = csv.DictWriter(f, fieldnames=HEADER)
         cheques_writer.writeheader()
         cheques_writer.writerows(cheques)
+
+def imprimir_cheque(cheque):
+    print(
+        f"""
+        Cheque Nro {cheque["NroCheque"]} 
+        Banco {cheque["CodigoBanco"]} Sucursal {cheque ["CodigoSucursal"]}.
+        Origen: {cheque["NumeroCuentaOrigen"]} Destino: {cheque["NumeroCuentaDestino"]}
+
+        Monto: {cheque["Valor"]}
+        Fecha de Origen: {datetime.datetime.fromtimestamp(int(cheque["FechaOrigen"]))}
+        Fecha de Pago: {datetime.datetime.fromtimestamp(int(cheque["FechaPago"]))}
+
+        Tipo: {cheque["Tipo"]}
+        Estado: {cheque["Estado"]}
+
+
+        """
+    )
 
 def separar_argumentos(args):
     """

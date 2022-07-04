@@ -10,7 +10,7 @@ def main():
     args = sys.argv[1:] 
 
     if len(args) < 4 or len(args) > 6:
-        print("Cantidad de elemntos errónea.")
+        print("Cantidad de elementos errónea.")
         return
 
     path, dni, salida, tipo, estado, fecha = separar_argumentos(args)
@@ -41,7 +41,7 @@ def main():
 
     if salida.lower() == "pantalla":
         for cheque in cheques_filtrados:
-            print(cheque)
+            imprimir_cheque(cheque)
     elif salida.lower() == "csv":
         crear_csv(cheques_filtrados)
 
