@@ -33,6 +33,7 @@ def filtro(path, dni, tipo, estado, rango_fecha):
     """
     Recibe un path a un archivo de cheques tipo csv, y la opciones de filtrado.
     Devuelve una lista filtrada de los cheques que cumplen.
+    En caso de error, si el archivo no se pudo abir o si se repite el numero de cheques, devuelve None.
     """
     try:
         archivo = open(path)
@@ -40,10 +41,16 @@ def filtro(path, dni, tipo, estado, rango_fecha):
         print("Archivo no encontrado.")
         return None
     cheques_filtrados = []
+    numero_cheques = {}
     with archivo:
         cheques = csv.DictReader(archivo)
         for cheque in cheques:
-            if filtrado(cheque, dni, tipo, estado, rango_fecha): cheques_filtrados.append(cheque)
+            if filtrado(cheque, dni, tipo, estado, rango_fecha): 
+                cheques_filtrados.append(cheque)
+                if cheque["NroCheque"] in numero_cheques: 
+                    print("Número de cheque repetido para un mismo DNI.")
+                    return None
+                numero_cheques.add(cheque["NroCheque"])
     if not len(cheques_filtrados): print("No se han encontrado cheques que cumplan con los parametros ingresados.")
     return cheques_filtrados
             
