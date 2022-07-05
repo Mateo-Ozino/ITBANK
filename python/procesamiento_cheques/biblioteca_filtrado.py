@@ -105,7 +105,7 @@ def separar_argumentos(args):
     estado, fecha = None, None
     if len(args) > 4: 
         argumento = args[4]
-        if argumento.lower in ESTADO_VALIDO: estado = argumento
+        if argumento.lower() in ESTADO_VALIDO: estado = argumento
         else: fecha = argumento
     elif len(args) > 5: 
         estado = args[4]
