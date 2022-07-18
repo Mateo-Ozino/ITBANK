@@ -44,7 +44,7 @@ class RazonRetiroEfectivo(Razon):
     def resolver(self, cliente, transaccion):
         if cliente.get_cuenta().get_cupo_diario_restante() <= transaccion['monto']:
             self._mensaje = f"El cliente {cliente.get_tier()} no puede retirar ${transaccion['monto']}. Cupo diario de extracción insuficiente."
-        elif cliente.get_cuenta().get_monto() <= transaccion['monto']:
+        elif cliente.get_cuenta().get_monto() + cliente.get_cuenta().get_saldo_descubierto_disponible() <= transaccion['monto']:
             self._mensaje = f"El cliente {cliente.get_tier()} no puede retirar ${transaccion['monto']}. Saldo insuficiente."
         else:
             self._mensaje = "ERROR: razon desconocida. Incosistencia en los datos del archivo."
