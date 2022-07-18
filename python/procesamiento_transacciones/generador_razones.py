@@ -4,6 +4,10 @@ TIPO_TRANSACCION = {'RETIRO_EFECTIVO_CAJERO_AUTOMATICO': 0, 'ALTA_TARJETA_CREDIT
                     'ALTA_CHEQUERA': 2, 'COMPRA_DOLAR': 3, 'TRANSFERENCIA_ENVIADA': 4, 'TRANSFERENCIA_RECIBIDA': 5}
 
 def crear_razon(cliente, transaccion):
+    """
+    Recibe un Cliente y una trasacción.
+    En caso de que la transacción haya sido rechazada, crea y devuelve un objeto razón que almacena el porqué. En caso contrario, devuelve None. 
+    """
     if transaccion['estado'] == 'ACEPTADA':
         return None
     

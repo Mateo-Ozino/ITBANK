@@ -7,6 +7,10 @@ from generador_razones import *
 
 
 def cargar_datos(path):
+    """
+    Recibe una dirección a un archivo con las transacciones de un cliente y su información.
+    Devuelve un objeto del tipo Cliente con la información y una lista con todas las transacciones.
+    """
     with open(path) as f:
         datos = json.load(f)
         if datos['tipo'] == 'CLASSIC':
@@ -22,6 +26,10 @@ def cargar_datos(path):
     return cliente, datos['transacciones']
 
 def generar_informe(cliente, transacciones):
+    """
+    Recibe un cliente y una lista de sus transacciones con razones generadas.
+    Se encarga de crear un archivo .html con un informe de las transacciones y, en caso de que hayan sido rechazadas, el porqué del rechazo.
+    """
     datos = str(cliente).split('\n')
     html = """
 <!DOCTYPE html>
