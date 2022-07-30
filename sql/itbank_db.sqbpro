@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/mateo/OneDrive/Desktop/itbank.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="4270"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,16:mainauditoria_cuenta"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="auditoria_cuenta" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="9" mode="1"/></sort><column_widths><column index="1" value="64"/><column index="2" value="73"/><column index="3" value="114"/><column index="4" value="123"/><column index="5" value="85"/><column index="6" value="94"/><column index="7" value="86"/><column index="8" value="95"/><column index="9" value="216"/><column index="10" value="102"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="cantidad_clientes_sucursal" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="1"/></sort><column_widths><column index="1" value="183"/><column index="2" value="177"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="cliente" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="6" mode="0"/></sort><column_widths><column index="1" value="117"/><column index="2" value="148"/><column index="3" value="175"/><column index="4" value="135"/><column index="5" value="91"/><column index="6" value="96"/><column index="7" value="106"/><column index="8" value="115"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="clientes_edad" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="2" mode="0"/></sort><column_widths><column index="1" value="52"/><column index="2" value="199"/><column index="3" value="166"/><column index="4" value="79"/><column index="5" value="52"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="clientes_tipos" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="148"/><column index="2" value="106"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="cuenta" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="170"/><column index="2" value="167"/><column index="3" value="133"/><column index="4" value="298"/><column index="5" value="217"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="direccion" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="115"/><column index="2" value="122"/><column index="3" value="76"/><column index="4" value="214"/><column index="5" value="214"/><column index="6" value="259"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="empleado" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="6" mode="0"/></sort><column_widths><column index="1" value="120"/><column index="2" value="151"/><column index="3" value="178"/><column index="4" value="186"/><column index="5" value="138"/><column index="6" value="96"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="movimientos" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="139"/><column index="2" value="145"/><column index="3" value="98"/><column index="4" value="221"/><column index="5" value="232"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="prestamo" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="87"/><column index="2" value="133"/><column index="3" value="113"/><column index="4" value="114"/><column index="5" value="138"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="sqlite_sequence" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="108"/><column index="2" value="61"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="sucursal" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="96"/><column index="2" value="146"/><column index="3" value="177"/><column index="4" value="174"/><column index="5" value="115"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="tarjeta" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="120"/><column index="2" value="173"/><column index="3" value="184"/><column index="4" value="144"/><column index="5" value="129"/><column index="7" value="181"/><column index="8" value="167"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="tipo_cliente" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="158"/><column index="2" value="126"/><column index="3" value="178"/><column index="4" value="115"/><column index="5" value="173"/><column index="6" value="151"/><column index="7" value="201"/><column index="8" value="213"/><column index="9" value="204"/><column index="10" value="221"/><column index="11" value="186"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="alteraciones">--Primera problemática
+ALTER TABLE cliente
+ADD COLUMN client_type TEXT;
+
+ALTER TABLE cuenta
+ADD COLUMN account_type TEXT;
+--
+
+--Segunda problemática
+ALTER TABLE cliente
+ADD COLUMN direccion_id INTEGER;
+
+ALTER TABLE empleado
+ADD COLUMN direccion_id INTEGER;
+--</sql><sql name="creaciones">--Primera problemática
+CREATE TABLE IF NOT EXISTS &quot;tarjeta&quot;(
+		&quot;card_id&quot; INTEGER NOT NULL UNIQUE,
+		&quot;card_number&quot; INTEGER NOT NULL UNIQUE,
+		&quot;customer_id&quot; INTEGER NOT NULL,
+		&quot;cvv&quot; INTEGER NOT NULL,
+		&quot;creation_date&quot; TEXT NOT NULL,
+		&quot;expire_date&quot; TEXT NOT NULL,
+		&quot;card_type&quot; TEXT NOT NULL,
+		&quot;brand&quot; TEXT NOT NULL,
+		FOREIGN KEY(&quot;customer_id&quot;) REFERENCES &quot;cliente&quot;(&quot;customer_id&quot;),
+		PRIMARY KEY(&quot;card_id&quot;),
+		CHECK(length(&quot;card_number&quot;) &lt;= 20)
+);
+
+CREATE TABLE IF NOT EXISTS &quot;tipo_cliente&quot;(
+		&quot;client_type_id&quot; INTEGER NOT NULL UNIQUE,
+		&quot;client_type&quot; TEXT NOT NULL,
+		&quot;checkbook_limit&quot; INTEGER NOT NULL,
+		&quot;card_limit&quot; INTEGER NOT NULL,
+		&quot;extraction_limit&quot; INTEGER,
+		&quot;transfer_limit&quot; INTEGER,
+		&quot;limite_descubierto&quot; INTEGER,
+		&quot;costo_transferencia&quot; INTEGER,
+		&quot;caja_ahorro_pesos&quot; INTEGER NOT NULL,
+		&quot;caja_ahorro_dolares&quot; INTEGER NOT NULL,
+		&quot;cuenta_corriente&quot; INTEGER NOT NULL,
+		CHECK(&quot;caja_ahorro_pesos&quot; IN (0,1) AND &quot;caja_ahorro_dolares&quot; IN (0,1) AND &quot;cuenta_corriente&quot; IN (0,1)),
+		PRIMARY KEY(&quot;client_type_id&quot;)
+);
+--
+--Cuarta problemática
+CREATE TABLE IF NOT EXISTS auditoria_cuenta(
+		old_id INTEGER,
+		new_id INTEGER,
+		old_balance INTEGER,
+		new_balance INTEGER,
+		old_iban INTEGER,
+		new_iban INTEGER,
+		old_type TEXT,
+		new_type TEXT,
+		user_action TEXT,
+		created_at TEXT
+);
+
+CREATE TRIGGER IF NOT EXISTS auditoria AFTER UPDATE ON cuenta FOR EACH ROW
+WHEN old.balance != new.balance OR old.iban != new.iban OR old.account_type != new.account_type
+BEGIN
+	INSERT INTO auditoria_cuenta VALUES(old.account_id, new.account_id, old.balance,
+	new.balance, old.iban, new.iban, old.account_type, new.account_type, 'Update de la tabla cuenta', date('now'));
+END;
+
+CREATE INDEX clientes_dni
+ON cliente(customer_id, customer_DNI)
+
+CREATE TABLE IF NOT EXISTS movimientos(
+		movimiento_id INTEGER NOT NULL UNIQUE,
+		numero_cuenta INTEGER NOT NULL,
+		monto INTEGER NOT NULL,
+		tipo_operacion TEXT NOT NULL,
+		hora INTEGER NOT NULL,
+		PRIMARY KEY(movimiento_id)
+);
+--</sql><sql name="inserts">--Primera problemática
+INSERT INTO tipo_cliente
+VALUES(1, 'CLASSIC', 0, 0, 10000, 50000, 0, 0.01, 1, 0, 0);
+
+INSERT INTO tipo_cliente
+VALUES(2, 'GOLD', 1, 1, 20000, 500000, 10000, 0.005, 1, 1, 0);
+
+INSERT INTO tipo_cliente
+VALUES(3, 'BLACK', 2, 5, 100000, NULL, 10000, 0, 1, 1, 1);
+--
+
+--Segunda problemática
+INSERT INTO cliente(customer_id, customer_name, customer_surname, customer_DNI, branch_id, dob, client_type, direccion_id)
+VALUES(501, 'Lois', 'Stout', 47730534, 80, '1984-07-07', 'GOLD', 499);
+
+INSERT INTO cliente(customer_id, customer_name, customer_surname, customer_DNI, branch_id, dob, client_type, direccion_id)
+VALUES(502, 'Hall', 'Mcconnell', 52055464, 45, '1968-04-30', 'BLACK', 500);
+
+INSERT INTO cliente(customer_id, customer_name, customer_surname, customer_DNI, branch_id, dob, client_type, direccion_id)
+VALUES(503, 'Hilel', 'Mclean', 43625213, 77, '1993-03-28', 'CLASSIC', 1);
+
+INSERT INTO cliente(customer_id, customer_name, customer_surname, customer_DNI, branch_id, dob, client_type, direccion_id)
+VALUES(504, 'Jin', 'Cooley', 21207908, 96, '1959-08-24', 'BLACK', 177);
+
+INSERT INTO cliente(customer_id, customer_name, customer_surname, customer_DNI, branch_id, dob, client_type, direccion_id)
+VALUES(505, 'Gabriel', 'Harmon', 57063950, 27, '1976-04-01', 'GOLD', 65);
+--</sql><sql name="deletes">--Segunda problemática
+DELETE FROM cliente
+WHERE customer_name = 'Noel' AND customer_surname = 'David'
+--</sql><sql name="updates">--Segunda problemática
+UPDATE empleado
+SET employee_hire_date = SUBSTR(employee_hire_date, 7, 4) || '-' || SUBSTR(employee_hire_date, 4, 2) || '-' || SUBSTR(employee_hire_date, 1, 2)
+
+UPDATE cliente
+SET branch_id = 10
+WHERE customer_id &gt; 500;
+--
+
+--Cuarta problemática
+UPDATE cuenta
+SET balance = balance - 10000
+WHERE account_id IN (10, 11, 12, 13, 14);
+--</sql><sql name="views">--Segunda problemática
+CREATE VIEW IF NOT EXISTS clientes_edad
+AS
+	SELECT customer_id AS ID, s.branch_number AS Numero_sucursal, 
+	customer_name AS Nombre, customer_surname AS Apellido, customer_DNI AS DNI,
+	cast(strftime('%Y.%m%d', 'now') - strftime('%Y.%m%d', dob) as int) AS [Edad] 
+	FROM cliente c
+	JOIN sucursal s ON c.branch_id = s.branch_id;
+--
+--Cuarta problemática
+CREATE VIEW IF NOT EXISTS cantidad_clientes_sucursal
+AS
+	SELECT count(*) AS [Cantidad de clientes], branch_name, c.branch_id
+	FROM cliente c JOIN sucursal s ON  c.branch_id = s.branch_id
+	GROUP BY branch_name;
+--</sql><sql name="consultas_segunda_problematica">SELECT * FROM clientes_edad
+WHERE Edad &gt; 40
+ORDER BY DNI ASC;
+
+SELECT * FROM clientes_edad
+WHERE &quot;Nombre y apellido&quot; like 'Anne%' OR &quot;Nombre y apellido&quot; like 'Tyler%'
+ORDER BY Edad ASC;
+
+--2 OPCIONES DE LA MISMA QUERY
+SELECT loan_type AS [Tipo de préstamo], max(loan_total) AS [Importe] FROM prestamo;
+
+SELECT loan_type AS [Tipo de préstamo de mayor importe] FROM prestamo
+WHERE loan_total = (SELECT max(loan_total) FROM prestamo);
+--</sql><sql name="consultas_tercer_problematica">--Seleccionar las cuentas con saldo negativo
+SELECT * FROM cuenta
+WHERE balance &lt; 0;
+
+--Seleccionar el nombre, apellido y edad de los clientes que tengan en el apellido la letra Z
+SELECT Nombre, Apellido, Edad FROM clientes_edad
+WHERE Apellido like '%z%';
+
+--Seleccionar el nombre, apellido, edad y nombre de sucursal de las personas cuyo nombre sea “Brendan” y el resultado ordenarlo por nombre de sucursal
+SELECT Nombre, Apellido, Edad, branch_name AS Nombre_sucursal
+FROM clientes_edad ce JOIN sucursal s ON ce.Numero_sucursal = s.branch_number
+WHERE Nombre = 'Brendan'
+ORDER BY Nombre_sucursal;
+
+--Seleccionar de la tabla de préstamos, los préstamos con un importe mayor a $80.000 y los préstamos prendarios utilizando la unión de tablas/consultas 
+--(recordar que en las bases de datos la moneda se guarda como integer, en este caso con 2 centavos)
+SELECT loan_id, loan_type, loan_total FROM prestamo WHERE loan_total &gt; 8000000
+UNION
+SELECT loan_id, loan_type, loan_total FROM prestamo WHERE loan_type = 'PRENDARIO'
+ORDER BY loan_type;
+
+--Seleccionar los prestamos cuyo importe sea mayor que el importe medio de todos los prestamos
+SELECT loan_id, loan_type, loan_total FROM prestamo WHERE loan_total &gt; (SELECT avg(loan_total) FROM prestamo);
+
+--Contar la cantidad de clientes menores a 50 años
+SELECT count(*) AS [Cantidad de clientes menores de 50 años] FROM clientes_edad WHERE Edad &lt; 50;
+
+--Seleccionar las primeras 5 cuentas con saldo mayor a 8.000$
+SELECT account_id, balance FROM cuenta WHERE balance &gt; 800000
+LIMIT 5;
+
+--Seleccionar los préstamos que tengan fecha en abril, junio y agosto, ordenándolos por importe
+SELECT loan_id, loan_type, loan_total, loan_date FROM prestamo 
+WHERE loan_date like '%-04-%' OR loan_date like '%-06-%' OR loan_date like '%-08-%'
+ORDER BY loan_total;
+
+--Obtener el importe total de los prestamos agrupados por tipo de préstamos. Por cada tipo de préstamo de la tabla préstamo, calcular la suma de sus importes. 
+--Renombrar la columna como loan_total_accu
+SELECT loan_type, sum(loan_total) AS loan_total_accu FROM prestamo
+GROUP BY loan_type;</sql><sql name="consultas_cuarta_problematica">--Listar la cantidad de clientes por nombre de sucursal ordenando de mayor a menor
+SELECT count(*) AS [Cantidad de clientes], branch_name
+FROM cliente c JOIN sucursal s ON  c.branch_id = s.branch_id
+GROUP BY branch_name
+ORDER BY [Cantidad de clientes] DESC;
+
+--Obtener la cantidad de empleados por cliente por sucursal en un número real
+SELECT round(CAST(count(employee_name) AS REAL)/CAST([Cantidad de clientes] AS REAL), 2) AS [Cantidad de empleados por cliente por sucursal], e.branch_id FROM empleado e
+JOIN cantidad_clientes_sucursal ccs ON e.branch_id = ccs.branch_id
+GROUP BY e.branch_id;
+
+--Obtener la cantidad de tarjetas de crédito por tipo por sucursal
+SELECT count(card_type) AS [Cantidad de tarjetas de crédito por tipo por sucursal], branch_id FROM tarjeta t
+JOIN cliente c ON t.customer_id = c.customer_id
+WHERE card_type = 'CREDITO'
+GROUP BY branch_id;
+
+--Obtener el promedio de créditos otorgado por sucursal
+SELECT round(avg(loan_id)) AS [Cantidad de creditos otorgados por sucursal], branch_id FROM prestamo p
+JOIN cliente c ON p.customer_id = c.customer_id
+GROUP BY branch_id;</sql><sql name="transaction_cuarta_problematica">BEGIN TRANSACTION;
+UPDATE cuenta SET balance = balance - 100000 WHERE account_id = 200;
+UPDATE cuenta SET balance = balance + 100000 WHERE account_id = 100;
+INSERT INTO movimientos(numero_cuenta, monto, tipo_operacion, hora) 
+VALUES(200, 1000000, 'Transferencia enviada', datetime('now'));
+INSERT INTO movimientos(numero_cuenta, monto, tipo_operacion, hora) 
+VALUES(100, 1000000, 'Transferencia recibida', datetime('now'));
+COMMIT;</sql><current_tab id="9"/></tab_sql></sqlb_project>

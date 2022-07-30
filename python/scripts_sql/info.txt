@@ -1,0 +1,1 @@
+Scripts usados como generadores de algunos datos para la base de datos del itbank.
