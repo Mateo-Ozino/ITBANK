@@ -1,0 +1,144 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}Homebanking{% endblock %}
+
+{% block content %}
+    <header>
+        <nav class="navHb">
+            <div class="offcanvas offcanvas-end" id="demo">
+                <div class="offcanvas-header">
+                    <h1>Menú</h1>
+                    <button type="button" class="btnPropio" data-bs-dismiss="offcanvas"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="cuenta-aviso">
+                        {% if not request.user.is_authenticated %} 
+                            <button class="btn btn-primary btn-cuenta" onclick="location.href='{% url 'login' %}'"><p>Acceder</p></button> 
+                        {% else %} 
+                            <button class="btn btn-primary btn-cuenta" onclick="location.href='{% url 'logout' %}'"><p>Salir</p></button> 
+                        {% endif %}
+                    </div>
+                    <h2>Consultas</h2>
+                    <ul>
+                        <li><a href="">Cuentas</a></li>
+                        <li><a href={% url 'prestamos' %}>Solicitar prestamos</a></li>
+                        <li><a href="">Comprobantes</a></li>
+                        <li><a href="">Tarjetas</a></li>
+                        <li><a href="">Asistencia y reclamos</a></li>
+                        <li><a href="">Resumen impositivo</a></li>
+                    </ul>
+                    <h2>Transacciones</h2>
+                    <ul>
+                        <li><a href="">Pago de servicios e impuestos</a></li>
+                        <li><a href="">Transferencias</a></li>
+                    </ul>
+                    <h2 class="exit text-center"><a href="{% url 'index' %}">Volver al inicio</a></h2>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                        <p>Menú</p>
+                    </button>
+                </div>
+                <div>
+                    <h1 class="tituloHb">Cuentas</h1>
+                </div>
+                <div class="logo">
+                    <a href="#">
+                        <img src="{% static 'base/img/logoitbankoficial.svg' %}" alt="logo">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="seccion">
+            <h1 class="tituloHb m-1">Hola, {{ user.first_name }} {{ user.last_name }}</h1>
+            <h2 class="text-center">Tipo de cuenta: <span class="text-info">{{ cuenta.0.account_type }}</span></h2>
+            <h2 class="m-1 fs-5 text-center text-info">IBAN {{ cuenta.0.iban }}</h2>
+            <section class="mainHb__section1">
+                <div class="card card1">
+                    <div class="card-header">Saldo</div>
+                    <div class="card-body">
+                        <div class="fs-5">$ <span class="text-success">{{ cuenta.0.balance }}</span></div>
+                        <div class="fs-5">U$S <span class="text-success">100,00</span></div>
+                    </div>
+                    <div class="card-footer"><a href="#">Movimientos recientes</a></div>
+                </div>
+                <div class="card card2">
+                    <div class="card-header">Tarjeta 1</div>
+                    <div class="card-body">
+                        <div class="fs-5 fw-bold text-center">{{ tarjetas.0.card_number }}</div>
+                        <div class="fs-5 fw-bold text-center">{{ marcas_tarjetas.0 }}</div>
+                    </div>
+                    <div class="card-footer">Vencimiento: {{ tarjetas.0.expire_date }}</div>
+                </div>
+                <div class="card card3">
+                    <div class="card-header">Tarjeta 2</div>
+                    <div class="card-body">
+                        <div class="fs-5 fw-bold text-center">{{ tarjetas.1.card_number }}</div>
+                        <div class="fs-5 fw-bold text-center">{{ marcas_tarjetas.1 }}</div>
+                    </div>
+                    <div class="card-footer">Vencimiento: {{ tarjetas.1.expire_date }}</div>
+                </div>
+            </section>
+            <section class="mainHb__section2">
+                <h3 class="m-2 mt-4 mb-3">Menú rápido</h3>
+                <ul class="menuRapido">
+                    <li><a href={% url 'prestamos' %}>Solicitar prestamos</a></li>
+                    <li><a href="">Comprobantes</a></li>
+                    <li><a href="">Tarjetas</a></li>
+                    <li><a href="">Asistencia y reclamos</a></li>
+                    <li><a href="">Resumen impositivo</a></li>
+                    <li><a href="">Pago de servicios e impuestos</a></li>
+                    <li><a href="">Transferencias</a></li>
+                </ul>
+            </section>
+        </section>
+        <!--CALCULADORA DE GASTOS-->
+        <button class="botonCalcu" data-bs-toggle="modal" data-bs-target="#Modal"><i class="fa-solid fa-calculator"></i></button>
+        <!-- Modal -->
+        <div class="modal fade" id="Modal">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h3>Dividir Gastos</h3>
+                        <h4>Añada a sus amigos!</h4>
+                        <div class="sub-contenedorArriba">
+                            <div class="contenedorInput">
+                                <input type="text" id="inputNombre" class="form-control" maxlength="14" name="inputNombre" placeholder="Nombre">
+                                <button id="reset" class="btn btnReset" onclick="reset()">Reset</button>
+                            </div>
+                            <div class="contenedorBtn">
+                                <input type="number" id="inputMonto" class="form-control" name="inputMonto" placeholder="Monto">
+                                <button id="agregar" class="btn btnAñadir" onclick="calculo()">Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <section id="contenedorTablaJS">
+                            <table class="table text-center" id="table"></table>
+                        </section>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <div class="abajo">
+                            <div id="contenedorMontoTotal"></div>
+                            <div id="contenedorDivGastos"></div>
+                        </div>
+                        <button type="button" class="btn btnClose" data-bs-dismiss="modal" onclick="borradoInputs()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{% static 'base/js/calculadora.js' %}"></script>
+{% endblock %}

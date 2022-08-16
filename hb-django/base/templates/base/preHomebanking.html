@@ -1,0 +1,59 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}Inicio Homebanking{% endblock %}
+
+{% block content %}
+    <header>
+        <!--NavBar-->
+        <nav>
+            <div class="contenedor">
+                <div>
+                    <button class="btn btn-primary btn-pre" onclick="location.href='{% url 'index' %}'">
+                        <p>Volver</p>
+                    </button>
+                </div>
+                <div class="cuenta-aviso">
+                    {% if not request.user.is_authenticated %} 
+                        <button class="btn btn-primary btn-cuenta" onclick="location.href='{% url 'login' %}'"><p>Acceder</p></button> 
+                    {% else %} 
+                        <button class="btn btn-primary btn-cuenta" onclick="location.href='{% url 'logout' %}'"><p>Salir</p></button> 
+                    {% endif %}
+                </div>
+                <div class="logo">
+                    <a href="{% url 'index' %}">
+                        <img src="{% static 'base/img/logoitbankoficial.svg' %}" class="img-logo" alt="logo">
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!--End NavBar-->
+    </header>
+    <main>
+        <!--Baner area-->
+        <div class="mx-cont-baner">
+            <h2 class="mx-primary-txt">Bienvenido al nuevo HomeBanking!</h2>
+        </div>
+        <!--End Baner area-->
+        <!--Main Box-->
+        <div class="container-foto-texto p-3" >
+            {% comment %} <div class=" col-sm-4">
+                <img class="mx-conf-img" src="{% static 'base/img/ok.jpg' %}" alt="">
+            </div> {% endcomment %}
+            <div class="container-botones">
+                <h2 class="mx-h2 text-center">Rapido, Amigable y Moderno</h2>
+                <div class="ingreso-cuenta-hb">
+                    <a href="{% url 'login' %}"><button type="button" class="btn">Ingresar</button></a>
+                </div>
+            </div>
+            <div class="container-botones">
+                <h2 class="mx-h2 text-center">¿Todavía no sos cliente de itbank?</h2>
+                <div class="ingreso-cuenta-hb">
+                    <a href="{% url 'signup' %}"><button type="button" class="btn">Registrarme</button></a>
+                </div>
+            </div>
+        </div>
+        <!--End Main Box-->
+    </main>
+{% endblock %}

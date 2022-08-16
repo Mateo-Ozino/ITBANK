@@ -1,0 +1,188 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title%}ITBANK{% endblock %}
+
+{% block content %}
+    <!--ENCABEZADO: contiene la barra de navegación con enlace directo al Home Banking-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+            <div class="container-fluid">
+                <div class="imagen-nav">
+                    <a href="#"><img src="{% static 'base/img/logoitbankoficial.svg' %}" alt="logo"/></a>
+                </div>
+                <div class="d-flex">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'nosotros' %}">Nosotros</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'ayuda' %}">Ayuda</a>
+                        </div>
+                    </div>
+                    <a href="{% url 'preHomebanking' %}"><button class="btn boton-hb btn-outline-primary me-2">Home Banking</button></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--CONTENIDO PRINCIPAL: contiene un carrusel de imagenes con links a los sitios correspondientes, un texto intermedio y al final una serie de tarjetas-->
+    <main class="contenido-principal">
+        <div id="carouselExampleCaptions" class="carousel slide mt-0 border-bottom shadow" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active">
+                    <a target="_blank" href="{% url 'preHomebanking' %}">
+                        <img src="{% static 'base/img/home-banking.png' %}" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>Nuevo Home Banking</h5>
+                        <p class="d-none d-md-block">Hacé click en la imagen y visita el nuevo Home Banking ITBANK</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a target="_blank" href="https://www.infobae.com/economia/2022/05/05/marcha-atras-del-banco-central-le-prohibira-vender-criptomonedas-al-banco-galicia-y-a-otras-entidades/">
+                        <img src="{% static 'base/img/cripto.png'%}" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>Criptomonedas</h5>
+                        <p class="d-none d-md-block">Marcha atrás del Banco Central: le prohibió vender criptomonedas al Banco Galicia y a otras entidades</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a target="_blank" href="https://www.diarioconvos.com/2022/05/04/atencion-monotributistas-que-pasa-con-los-creditos-a-tasa-cero-y-los-bancos-que-reclaman-las-deudas/">
+                        <img src="{% static 'base/img/creditos.png' %}" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption">
+                        <h5>AFIP</h5>
+                        <p class="d-none d-md-block">Qué pasa con los créditos a tasa cero y los bancos que reclaman las deudas</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <section>
+            <h5 class="text-center mt-3 fs-1">Cotización del dolar</h5>
+            <div id="divisas" class="row m-0 divisas border-top border-bottom shadow w-100">
+            </div>
+        </section>
+        <div class="container-fluid">
+            <div class="d-flex flex-column align-items-center justify-content-center mt-5">
+                <h5 class="fs-1 text-center">ITBANK</h5>
+                <h5 class="fs-6 text-center">Un banco al servicio de la comunidad</h5>
+                <h5 class="fs-3 text-center">¡Conocé algunas de las opiniones de nuestros clientes!</h5>
+            </div>
+        </div>
+        <div class="container-fluid d-flex my-2 border-top border-bottom shadow">
+            <div class="row">
+                <div class="col-12 col-lg-3 mb-2 mt-2 my-lg-2">
+                    <article class="card h-100 me-2 me-lg-0 bg-secondary text-white shadow"> 
+                        <div class="card-body rounded">
+                            <div class="d-flex mb-3">
+                                <div class="imagen-perfiles">
+                                    <img src="{% static 'base/img/image-daniel.jpg' %}" alt="" class="border border-white border-3 rounded-circle">
+                                </div>
+                                <div class="ps-3">
+                                    <h6 class="m-0 h6 texto-nom">Daniel Lopéz</h6>
+                                    <p class="m-0 h7 texto-red">Vía Twitter</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="h7">Es impresionante la cantidad de descuentos que se tiene con las tajetas del banco en los locales, es una buena alternativa a la suba de los precios.</p>   
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-3 mb-2 my-lg-2">
+                    <article class="card h-100 me-2 me-lg-0 bg-secondary text-white shadow"> 
+                        <div class="card-body rounded">
+                            <div class="d-flex mb-3">
+                                <div class="imagen-perfiles">
+                                    <img src="{% static 'base/img/image-jesica.jpg'%}" alt="" class="border border-white border-3 rounded-circle">
+                                </div>
+                                <div class="ps-3">
+                                    <h6 class="m-0 h6 texto-nom">Jesica Fernandéz</h6>
+                                    <p class="m-0 h7 texto-red">Vía Facebook</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="h7">Las posibilidades que dan los nuevos tipos de tarjetas que otorga el banco lo hacen ideal para la gente joven.</p>            
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-3 mb-2 my-lg-2">
+                    <article class="card h-100 me-2 me-lg-0 bg-secondary text-white shadow"> 
+                        <div class="card-body rounded">
+                            <div class="d-flex mb-3">
+                                <div class="imagen-perfiles">
+                                    <img src="{% static 'base/img/image-marcos.jpg' %}" alt="" class="border border-white border-3 rounded-circle">
+                                </div>
+                                <div class="ps-3">
+                                    <h6 class="m-0 h6 texto-nom">Marcos Gentilleti</h6>
+                                    <p class="m-0 h7 texto-red">Vía Twitter</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="h7">El nuevo Home Banking que ha incorporado el banco es excelente, han incorporado muchas funcionalidades que antes hacía falta.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-12 col-lg-3 mb-2 my-lg-2">
+                    <article class="card h-100 me-2 me-lg-0 bg-secondary text-white shadow"> 
+                        <div class="card-body rounded">
+                            <div class="d-flex mb-3">
+                                <div class="imagen-perfiles">
+                                    <img src="{% static 'base/img/image-jonathan.jpg' %}" alt="" class="border border-white border-3 rounded-circle">
+                                </div>
+                                <div class="ps-3">
+                                    <h6 class="m-0 h6 texto-nom">Jonathan Peréz</h6>
+                                    <p class="m-0 h7 texto-red">Vía Instagram</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="h7">El banco es excelente tanto en su funcionamiento como en la respuesta a los inconvenientes que se presentan.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--PIE DE PÁGINA: contiene el logo del banco y los derechos reservados-->
+    <footer class="pie-pagina">
+        <div class="container-fluid">
+            <div class="d-flex flex-column align-items-center justify-content-center mt-5">
+                <div class="imagen-footer">
+                    <img class="mb-2" src="{% static 'base/img/logoitbankoficial.svg'%}" alt="">
+                </div>  
+                <h5 class="fs-6 text mb-5">© 2021 Company, Inc</h5>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'base/js/divisas.js'%}"></script>
+{% endblock %}

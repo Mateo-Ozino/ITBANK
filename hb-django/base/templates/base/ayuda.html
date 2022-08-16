@@ -1,0 +1,78 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}Ayuda{% endblock %}
+
+{% block content %}
+    <!--ENCABEZADO: contiene la barra de navegación con enlace directo al Home Banking-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+            <div class="container-fluid">
+                <div class="imagen-nav">
+                    <a href="{% url 'index' %}"><img src="{% static 'base/img/logoitbankoficial.svg'%}" alt="logo"/></a>
+                </div>
+                <div class="d-flex">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <a class="nav-link" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'nosotros' %}">Nosotros</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'ayuda' %}">Ayuda</a>
+                        </div>
+                    </div>
+                    <a href="{% url 'preHomebanking' %}"><button class="btn boton-hb btn-outline-primary me-2">Home Banking</button></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--CONTENIDO PRINCIPAL: contiene un "chat" con la posibilidad de colocar un mail y un contenido para hacer consultas-->
+    <main class="contenido-principal mt-2 pt-5">
+        <div class="container-fluid shadow pb-2">
+                <h5 class="fs-1 text-center">¿En qué podemos ayudarte?</h5>
+                <div class="pt-3 chat">
+                    <article class="card me-lg-0 mb-5 bg-secondary text-white shadow"> 
+                        <div class="card-body rounded">
+                            <div class="d-flex mb-3">
+                                <div class="imagen-perfiles">
+                                    <img src="{% static 'base/img/logo_perfil.jpeg'%}" alt="" class="border border-dark border-3 rounded-circle">
+                                </div>
+                                <div class="ps-3">
+                                    <h6 class="m-0 h6 texto-nom">ITBANK</h6>
+                                    <p class="m-0 h7 texto-red">Asistente Virtual</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="h7">Hola. Por acá ITBANK, el Asistente Virtual. Decime tu consulta e intentaré ayudarte de la mejor manera posible. 😊 Para ello ingresá tu mail en el formulario y escribe la consulta en el recuadro, la respuesta a su consulta será enviada a su correo en la brevedad.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="mb-3">
+                    <input type="email" placeholder="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">No compartiremos tu correo</div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Escriba aquí su consulta" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Enviar</button>
+                </div>
+        </div>
+    </main>
+
+    <!--PIE DE PÁGINA: contiene el logo del banco y los derechos reservados-->
+    <footer>
+        <div class="container-fluid position-relative bottom-0">
+            <div class="d-flex flex-column align-items-center justify-content-center mt-5">
+                <div class="imagen-footer">
+                    <img class="mb-2" src="{% static 'base/img/logoitbankoficial.svg'%}" alt="">
+                </div> 
+                <h5 class="fs-6 text mb-5">© 2021 Company, Inc</h5>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

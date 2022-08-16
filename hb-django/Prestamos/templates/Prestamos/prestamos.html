@@ -1,0 +1,78 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}Prestamos{% endblock %}
+
+{% block content %}
+    <style>
+    </style>
+    <header>
+        <nav class="navHb">
+            <div class="offcanvas offcanvas-end" id="demo">
+                <div class="offcanvas-header">
+                    <h1>Menú</h1>
+                    <button type="button" class="btnPropio" data-bs-dismiss="offcanvas"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="cuenta-aviso">
+                        {% if not request.user.is_authenticated %} 
+                            <button class="btn btn-primary btn-cuenta" onclick="location.href='{% url 'login' %}'"><p>Acceder</p></button> 
+                        {% else %} 
+                            <button class="btn btn-primary btn-cuenta" onclick="location.href='{% url 'logout' %}'"><p>Salir</p></button> 
+                        {% endif %}
+                    </div>
+                    <h2>Consultas</h2>
+                    <ul>
+                        <li><a href={% url 'homebanking' %}>Cuentas</a></li>
+                        <li><a href={% url 'prestamos' %}>Solicitar prestamos</a></li>
+                        <li><a href="">Comprobantes</a></li>
+                        <li><a href="">Tarjetas</a></li>
+                        <li><a href="">Asistencia y reclamos</a></li>
+                        <li><a href="">Resumen impositivo</a></li>
+                    </ul>
+                    <h2>Transacciones</h2>
+                    <ul>
+                        <li><a href="">Pago de servicios e impuestos</a></li>
+                        <li><a href="">Transferencias</a></li>
+                    </ul>
+                    <h2 class="exit text-center"><a href="{% url 'index' %}">Volver al inicio</a></h2>
+                </div>
+            </div>
+            <div class="contenedor">
+                <div>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                        <p>Menú</p>
+                    </button>
+                </div>
+                <div>
+                    <h1 class="tituloHb text-center">Solicitud de prestamos</h1>
+                </div>
+                <div class="logo">
+                    <a href="#">
+                        <img src="{% static 'base/img/logoitbankoficial.svg' %}" alt="logo">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="w-100">
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    <p class="text-center">El monto solicitado supera el límite de su tipo de cliente</p>
+                </div>
+            {% endif %}
+            {% if success %}
+                <div class="alert alert-success" role="alert">
+                    <p class="text-center">El prestamo ha sido aceptado</p>
+                </div>
+            {% endif %}
+            <form action="" method="post" class="form-prestamo">{% csrf_token %}
+                {{ formulario.as_div }}
+                <input type="submit" value="Solicitar" class="btn btn-primary">
+            </form>
+        </div>
+    </main>
+{% endblock %}

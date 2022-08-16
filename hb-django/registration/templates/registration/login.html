@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+	<!-- ENCABEZADO -->
+	<header>
+		<nav class="navbar navbarCustom">
+			<div class="contenedor-img">
+				<img src="{% static 'base/img/logoitbankoficial.svg' %}" alt="logo"/>
+			</div>
+			<div class="contenedor-botones-nav">
+				<a href="{% url 'preHomebanking' %}">Volver</a>
+			</div>
+		</nav>
+	</header>
+	<!-- CONTENIDO PRINCIPAL -->
+	<main>
+		<h1 class="text-center title">Bienvenido!</h1>
+		<section class="warningFlex">
+			<div class="contenedor-warning">
+				<div class="warning-icono">
+					<i class="fa-solid fa-mobile-screen"></i>
+				</div>
+				<div class="warning-texto">
+					<p>No brindes datos personales por correo, telefono, SMS o redes sociales.<br><a class="link-consejos" href="">Ingresa a este enlace para conocer mas consejos para tu seguridad</a></p>
+				</div>
+			</div>
+		</section>
+		<section class="section__formulario">
+			{% if form.non_field_errors %} 
+			<p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p> 
+			{% endif %}
+			{% if 'register' in request.GET %}
+				<p style="color: green;">Registro exitoso, ingresa a tu cuenta.</p>
+			{% endif %}
+			<form action="" method="post"class="form">{% csrf_token %}
+				<div class="form-floating">
+					<input type="text" class="form-control" name="username" id="id_username" placeholder="Usuario" required>
+					<label for="id_username">Usuario(Numero de DNI)</label>
+				</div>
+				<div class="form-floating">
+					<input type="password" class="form-control" name="password" id="id_password" placeholder="Password" required>
+					<label for="id_password">Clave digital</label>
+				</div>
+				<div class="form-keyboard">
+					<i class="fa-solid fa-keyboard"></i>
+					<p>Teclado virtual</p>
+				</div>
+				<div class="contenedor-botones-form">
+					<p><input type="submit" class="btn btn-primary btn-block" value="Acceder"></p>
+				</div>
+				<div class="contenedor-recuperar-clave mb-3">
+					<a href="{% url 'password_reset' %}">Olvide mi usuario / clave digital</a>
+				</div> 
+			</form>
+		</section>
+	</main>
+{% endblock %}
