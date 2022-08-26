@@ -9,15 +9,10 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
 def prestamos(request):
-    
     user = Cliente.objects.get(customer_dni=User.get_username(request.user))
-    
     formulario_inicial = Form_prestamo
-    
     tipo_cliente = user.client_type
-    
-    customerID = user.customer_id
-    
+    customerID = user.customer_id 
     cuenta = Cuenta.objects.filter(customer_id=customerID)
     cuenta = cuenta.filter(account_id=cuenta[0].account_id)
 
