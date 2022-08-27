@@ -1,4 +1,7 @@
 const url = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
+const dolares_container = document.getElementById("dolares")
+const pesos_container = document.getElementById("pesos")
+const dolar_oficial = 138
 const divisas = new Set([
     "Dolar Oficial",
     "Dolar Blue",
@@ -63,6 +66,13 @@ fetch(url)
             }
             return arr;
         }, []);
-
         filteredData.forEach(mostrarDivisa);
     });
+
+pesos_container.addEventListener('change', () => {
+    dolares_container.value = (pesos_container.value / dolar_oficial).toFixed(2)
+})
+dolares_container.addEventListener('change', () => {
+    //e.stopPropagation
+    pesos_container.value = (dolares_container.value * dolar_oficial).toFixed(2)
+})

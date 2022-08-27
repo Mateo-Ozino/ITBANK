@@ -32,12 +32,13 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class PrestamoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Prestamo
-        fields = ['loan_id', 'loan_type', 'loan_date', 'loan_total', 'customer_id']
+        fields = ['loan_type', 'loan_date', 'loan_total']
 
 class TarjetaSerializer(serializers.HyperlinkedModelSerializer):
+    
     class Meta:
         model = Tarjeta
-        fields = ['card_id', 'card_number','customer', 'cvv', 'creation_date', 'expire_date', 'card_type', 'brand']
+        fields = ['card_id', 'card_number','customer_id', 'cvv', 'creation_date', 'expire_date', 'card_type', 'brand']
 
 class SucursalSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

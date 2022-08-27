@@ -1,4 +1,6 @@
+from statistics import mode
 from django.db import models
+from Tarjetas.models import Tarjeta
 
 # Create your models here.
 class Direccion(models.Model):
@@ -32,9 +34,9 @@ class Cliente(models.Model):
     customer_surname = models.TextField()  # This field type is a guess.
     customer_dni = models.TextField(db_column='customer_DNI')  # Field name made lowercase.
     dob = models.TextField(blank=True, null=True)
-    branch = models.ForeignKey('Sucursal', models.DO_NOTHING)
+    branch = models.ForeignKey(Sucursal, on_delete=models.DO_NOTHING)
     client_type = models.TextField(blank=True, null=True)
-    direccion = models.ForeignKey('Direccion', models.DO_NOTHING, blank=True, null=True)
+    direccion = models.ForeignKey(Direccion, on_delete=models.DO_NOTHING, blank=True, null=True)
 
     class Meta:
         managed = False

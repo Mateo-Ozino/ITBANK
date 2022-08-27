@@ -1,4 +1,4 @@
-from api.views import *
+from api.viewset import *
 from rest_framework.routers import DefaultRouter, SimpleRouter
 from django.urls import path, include
 

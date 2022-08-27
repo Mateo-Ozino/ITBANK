@@ -1,9 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
 
-# class DateInput(forms.DateInput):
-#     input_type = 'date'
-
 class Form_prestamo(forms.Form):
     tipo_prestamo = forms.ChoiceField(choices=(('PERSONAL', 'Prestamo personal'), ('HIPOTECARIO', 'Prestamo hipotecario'), ('PRENDARIO', 'Prestamo prendario')), label='Tipo de prestamo', required=True, widget=forms.Select(attrs={'class':'form-control mb-1'}))
     

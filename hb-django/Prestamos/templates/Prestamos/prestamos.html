@@ -24,7 +24,7 @@
                     <h2>Consultas</h2>
                     <ul>
                         <li><a href={% url 'homebanking' %}>Cuentas</a></li>
-                        <li><a href={% url 'prestamos' %}>Solicitar prestamos</a></li>
+                        <li><a href={% url 'prestamos' %}>Prestamos</a></li>
                         <li><a href="">Comprobantes</a></li>
                         <li><a href="">Tarjetas</a></li>
                         <li><a href="">Asistencia y reclamos</a></li>
@@ -45,7 +45,7 @@
                     </button>
                 </div>
                 <div>
-                    <h1 class="tituloHb text-center">Solicitud de prestamos</h1>
+                    <h1 class="tituloHb text-center">Prestamos</h1>
                 </div>
                 <div class="logo">
                     <a href="#">
@@ -56,21 +56,32 @@
         </nav>
     </header>
     <main>
-        <div class="w-100">
-            {% if error %}
-                <div class="alert alert-danger" role="alert">
-                    <p class="text-center">El monto solicitado supera el límite de su tipo de cliente</p>
-                </div>
-            {% endif %}
-            {% if success %}
-                <div class="alert alert-success" role="alert">
-                    <p class="text-center">El prestamo ha sido aceptado</p>
-                </div>
-            {% endif %}
-            <form action="" method="post" class="form-prestamo">{% csrf_token %}
-                {{ formulario.as_div }}
-                <input type="submit" value="Solicitar" class="btn btn-primary">
-            </form>
-        </div>
+        <section class="contenedor_prestamos">
+            {% for prestamo in prestamos_cliente %}
+            <div class="prestamo">
+                <p>{{ prestamo.loan_type }}</p>
+                <p>{{ prestamo.loan_date }}</p>
+                <p>${{ prestamo.loan_total }}</p>
+            </div>
+            {% endfor %}
+        </section>
+        <section>
+            <div class="w-100">
+                {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        <p class="text-center">El monto solicitado supera el límite de su tipo de cliente</p>
+                    </div>
+                {% endif %}
+                {% if success %}
+                    <div class="alert alert-success" role="alert">
+                        <p class="text-center">El prestamo ha sido aceptado</p>
+                    </div>
+                {% endif %}
+                <form action="" method="post" class="form-prestamo">{% csrf_token %}
+                    {{ formulario.as_div }}
+                    <input type="submit" value="Solicitar" class="btn btn-primary">
+                </form>
+            </div>
+        </section>
     </main>
 {% endblock %}

@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Prestamos import views as prestamos_views
-from api import views as api_views
 # from base import views as base_views
 # from base import urls as base_urls
 

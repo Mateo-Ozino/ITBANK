@@ -426,6 +426,20 @@ html {
 	color: #4ad84a;
 }
 
+.conversor {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.conversor div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 /* -------Pre Homebanking estilos ------*/
 .contenedor {
 	display: -webkit-box;
@@ -1020,6 +1034,29 @@ html {
 }
 
 /* Prestamos */
+
+.contenedor_prestamos {
+	margin: 15px 10px 10px 10px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.prestamo {
+	width: 20%;
+	text-align: center;
+	padding: 10px;
+	border-radius: 15px;
+	background-color: #5c73f2;
+	color: white;
+	font-weight: 500;
+}
+
+.prestamo p {
+	margin: 0;
+}
 
 .form-prestamo {
 	width: 100%;
